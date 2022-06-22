@@ -41,7 +41,6 @@
 								<button onClick="testAuth()">Log In</button>
 							</center>
 							<script>
-								access_token = "hello";
 								function testAuth() {
 									var client_id = '2324d4a0a83a4e26b618f73ba2d5cd0b';
 									var redirect_uri = 'https://kevinbui2.github.io/spotify';
@@ -60,13 +59,10 @@
 
 									//window.open(url);
 									window.location.replace(url)
-									current_url = window.location.href;
-									access_token = current_url.split("#access_token=")[1].split("&")[0];
-									document.write(access_token)
 								}
 								function testStat() {
-									//current_url = window.location.href;
-									//access_token = current_url.split("#access_token=")[1].split("&")[0];
+									current_url = window.location.href;
+									access_token = current_url.split("#access_token=")[1].split("&")[0];
 									document.write(access_token);
 								}
 							</script>
