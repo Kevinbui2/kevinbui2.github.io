@@ -42,12 +42,13 @@
 					//document.write(access_token);
 
 					const topArtist = async (token) => {
-						const result1 = await fetch("https://api.spotify.com/v1/me/top/artists", {
+						const out = await fetch("https://api.spotify.com/v1/me/top/artists", {
 						method: 'GET',
 						headers: {'Authorization': 'Bearer ' + access_token}
 					}); 
-						return result1
+						return out
 					}
+					result1 = topArtist(access_token)
 					document.write(result1)
 				}
 		</script>
