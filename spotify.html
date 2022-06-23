@@ -52,6 +52,7 @@
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
+
 					// Getting User Top Artists Medium Term
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'medium_term'})
 					  .then(function(data) {
@@ -60,11 +61,39 @@
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
+
 					// Getting User Top Artists Long Term
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'long_term'})
 					  .then(function(data) {
 					    var topArtistsLongTerm = data.items;
 					    console.log(topArtistsLongTerm);
+					  }, function(err) {
+					    console.log('Something went wrong!', err);
+					  });
+
+					// Getting User Top Tracks Short Term
+					spotifyApi.getMyTopTracks(options = {limit: 10, time_range: 'short_term'})
+					  .then(function(data) {
+					    var topTracksShortTerm = data.body.items;
+					    console.log(topTracksShortTerm);
+					  }, function(err) {
+					    console.log('Something went wrong!', err);
+					  });
+
+					// Getting User Top Tracks Medium Term
+					spotifyApi.getMyTopTracks(options = {limit: 10, time_range: 'medium_term'})
+					  .then(function(data) {
+					    var topTracksShortTerm = data.body.items;
+					    console.log(topTracksShortTerm);
+					  }, function(err) {
+					    console.log('Something went wrong!', err);
+					  });
+
+					// Getting User Top Tracks Long Term
+					spotifyApi.getMyTopTracks(options = {limit: 10, time_range: 'long_term'})
+					  .then(function(data) {
+					    var topTracksShortTerm = data.body.items;
+					    console.log(topTracksShortTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
