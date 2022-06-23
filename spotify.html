@@ -184,7 +184,8 @@
 					  });
 					  console.log('Short Term Tracks Genre')
 					  console.log(genresShortTerm)
-					  console.log(genresShortTerm.filter(unique))
+					  var uniqueGenresShortTerm = new Set(genresShortTerm);
+					  console.log(genresShortTerm)
 
 					  // Get Medium Term Tracks Genre
 					  const genresMediumTerm = []
