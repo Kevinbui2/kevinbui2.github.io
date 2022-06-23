@@ -51,6 +51,7 @@
 					    console.log('Short Term Artist')
 					    console.log(topArtistsShortTerm);
 
+					    document.getElementById('ShortTermArtistPic').innerHTML = data.items[0].images[0].url
 					    document.getElementById('ShortTermArtistTitle').hidden = false;
 					    document.getElementById('ShortTermArtistPic').hidden = false;
 					    for (let i = 0; i < topArtistsShortTerm.length; i++) {
@@ -170,7 +171,7 @@
 								<p>Get a glimpse of your spotify data such as your most listened to tracks and top artists in the short, medium, and long term. The short term time period is approximately the last 4 weeks; the medium term time period is approximately the last 6 months; the long term time period is comprised of your entire listening history.</p>
 							</center>
 							<!-- TESTING STUFF -->
-							<img id="ShortTermArtistPic" src="https://i.scdn.co/image/ab6761610000517450013041518600229448921d" style="float: right" hidden></img>
+							<img id="ShortTermArtistPic" src="" style="float: right" hidden></img>
 
 							<!-- END OF TEST -->
 							<h2 id='ShortTermArtistTitle' hidden>Your Top 5 Artists in the Last 4 Weeks</h2>
