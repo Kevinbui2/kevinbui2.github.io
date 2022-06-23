@@ -25,7 +25,7 @@
 					//var state = generateRandomString(16);
 
 					//localStorage.setItem(stateKey, state);
-					var scope = 'user-library-read user-top-read';
+					var scope = 'user-library-read user-top-read user-read-currently-playing';
 
 					var url = 'https://accounts.spotify.com/authorize';
 					url += '?response_type=token';
@@ -42,7 +42,17 @@
 					access_token = current_url.split("#access_token=")[1].split("&")[0];
 					//document.write(access_token);
 					var spotifyApi = new SpotifyWebApi();
-					console.log(spotifyApi)
+					spotifyApi.setAccessToken(access_token);
+					spotifyApi
+					  .getUserPlaylists() // note that we don't pass a user id
+					  .then(
+					    function (data) {
+					      console.log('User playlists', data);
+					    },
+					    function (err) {
+					      console.error(err);
+					    }
+					  );
 				}
 		</script>
 	</head>
