@@ -98,7 +98,7 @@
 
 					    document.getElementById('ShortTermTrackTitle').hidden = false;
 					    for (let i = 0; i < topTracksShortTerm.length; i++) {
-					    	const out = data.items[i].name + ' by ' + data.items[i].artists.name
+					    	const out = data.items[i].name + ' by ' + data.items[i].artists.items.name
 					    	document.getElementById('ShortTermTrack').innerHTML += ('<li>'+out+'</li>');
 					    }
 					  }, function(err) {
