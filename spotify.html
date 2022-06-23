@@ -44,14 +44,32 @@
 					var spotifyApi = new SpotifyWebApi();
 					spotifyApi.setAccessToken(access_token);
 					
-					//Getting User Top Artists
+					//Getting User Top Artists Short Term
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'short_term'})
 					  .then(function(data) {
-					    let topArtists = data.items;
+					    let topArtistsShortTerm = data.items;
+					    console.log(topArtistsShortTerm);
+					  }, function(err) {
+					    console.log('Something went wrong!', err);
+					  });
+					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'medium_term'})
+					  .then(function(data) {
+					    let topArtistsMediumTerm = data.items;
+					    console.log(topArtistsMediumTerm);
+					  }, function(err) {
+					    console.log('Something went wrong!', err);
+					  });
+					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'long_term'})
+					  .then(function(data) {
+					    let topArtistsLongTerm = data.items;
 					    console.log(topArtists);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
+
+					 console.log(topArtistsShortTerm)
+					 console.log(topArtistsMediumTerm)
+					 console.log(topArtistsLongTerm)
 				}
 		</script>
 	</head>
