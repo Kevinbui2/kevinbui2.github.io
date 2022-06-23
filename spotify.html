@@ -175,7 +175,7 @@
 					    	//document.getElementById('ShortTermTrack').innerHTML += ('<li>'+out+'</li>');
 					    	spotifyApi.getArtist(data.items[i].artists[0].id)
 							  .then(function(data) {
-							    console.log('Artist information', data.body);
+							    console.log('Artist information', data);
 							  }, function(err) {
 							    console.error(err);
 							  });
