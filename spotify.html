@@ -173,7 +173,12 @@
 					    	//out = data.items[i].name + " by " + data.items[i].album.artists[0].name
 					    	//document.getElementById('ShortTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
 					    	//document.getElementById('ShortTermTrack').innerHTML += ('<li>'+out+'</li>');
-					    	console.log(data.items[i].artists[0].id)
+					    	spotifyApi.getArtist(data.items[i].artists[0].id)
+							  .then(function(data) {
+							    console.log('Artist information', data.body);
+							  }, function(err) {
+							    console.error(err);
+							  });
 					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
