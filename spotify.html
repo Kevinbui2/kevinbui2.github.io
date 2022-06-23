@@ -95,6 +95,11 @@
 					    var topTracksShortTerm = data.items;
 					    console.log('Short Term Tracks')
 					    console.log(topTracksShortTerm);
+
+					    document.getElementById('ShortTermTrackTitle').hidden = false;
+					    for (let i = 0; i < topTracksShortTerm.length; i++) {
+					    	document.getElementById('ShortTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
@@ -102,9 +107,14 @@
 					// Getting User Top Tracks Medium Term
 					spotifyApi.getMyTopTracks(options = {limit: 5, time_range: 'medium_term'})
 					  .then(function(data) {
-					    var topTracksShortTerm = data.items;
+					    var topTracksMediumTerm = data.items;
 					    console.log('Medium Term Tracks')
-					    console.log(topTracksShortTerm);
+					    console.log(topTracksMediumTerm);
+
+					    document.getElementById('MediumTermTrackTitle').hidden = false;
+					    for (let i = 0; i < topTracksMediumTerm.length; i++) {
+					    	document.getElementById('MediumTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
@@ -112,9 +122,14 @@
 					// Getting User Top Tracks Long Term
 					spotifyApi.getMyTopTracks(options = {limit: 5, time_range: 'long_term'})
 					  .then(function(data) {
-					    var topTracksShortTerm = data.items;
+					    var topTracksLongTerm = data.items;
 					    console.log('Long Term Tracks')
-					    console.log(topTracksShortTerm);
+					    console.log(topTracksLongTerm);
+
+					    document.getElementById('LongTermTrackTitle').hidden = false;
+					    for (let i = 0; i < topTracksLongTerm.length; i++) {
+					    	document.getElementById('LongTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
@@ -159,6 +174,12 @@
 							<ul id='MediumTermArtist'></ul>
 							<h2 id='LongTermArtistTitle' hidden>Your Top 5 Artists in the Long Term</h2>
 							<ul id='LongTermArtist'></ul>
+							<h2 id='ShortTermTrackTitle' hidden>Your Top 5 Songs in the Short Term</h2>
+							<ul id='ShortTermTrack'></ul>
+							<h2 id='MediumTermTrackTitle' hidden>Your Top 5 Songs in the Medium Term</h2>
+							<ul id='MediumTermTrack'></ul>
+							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs in the Long Term</h2>
+							<ul id='LongTermTrack'></ul>
 						</div>
 					</section>
 
