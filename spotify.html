@@ -45,7 +45,7 @@
 					spotifyApi.setAccessToken(access_token);
 					
 					//Getting User Top Artists
-					spotifyApi.getMyTopArtists(options = {limit: 5})
+					spotifyApi.getMyTopArtists(options = {limit: 10, time_range = 'short_term'})
 					  .then(function(data) {
 					    let topArtists = data.items;
 					    console.log(topArtists);
