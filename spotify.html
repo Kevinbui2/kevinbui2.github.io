@@ -146,7 +146,9 @@
 
 					    document.getElementById('LongTermTrackPic').hidden = false;
 					    for (let i = 0; i < topTracksLongTerm.length; i++) {
-					    	document.getElementById('LongTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    	out = data.items[i].name + " by " + data.items[i].album.artists[0].name
+					    	//document.getElementById('LongTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    	document.getElementById('LongTermTrack').innerHTML += ('<li>'+out+'</li>');
 					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
