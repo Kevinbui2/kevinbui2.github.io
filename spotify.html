@@ -25,7 +25,7 @@
 					//var state = generateRandomString(16);
 
 					//localStorage.setItem(stateKey, state);
-					var scope = 'user-library-read user-top-read user-read-currently-playing';
+					var scope = 'user-library-read user-top-read';
 
 					var url = 'https://accounts.spotify.com/authorize';
 					url += '?response_type=token';
@@ -153,6 +153,27 @@
 					    	out = data.items[i].name + " by " + data.items[i].album.artists[0].name
 					    	//document.getElementById('LongTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
 					    	document.getElementById('LongTermTrack').innerHTML += ('<li>'+out+'</li>');
+					    }
+					  }, function(err) {
+					    console.log('Something went wrong!', err);
+					  });
+
+					  // Get Short Term Tracks Genre
+					  spotifyApi.getMyTopTracks(options = {limit: 2, time_range: 'short_term'})
+					  .then(function(data) {
+					    var topTracksShortTerm = data.items;
+					    console.log('Short Term Tracks Genres')
+					    console.log(topTracksShortTerm);
+
+					    //document.getElementById('ShortTermTrackPic').src = data.items[0].album.images[1].url
+					    //document.getElementById('ShortTermTrackTitle').hidden = false;
+
+					    //document.getElementById('ShortTermTrackPic').hidden = false;
+					    for (let i = 0; i < topTracksShortTerm.length; i++) {
+					    	//out = data.items[i].name + " by " + data.items[i].album.artists[0].name
+					    	//document.getElementById('ShortTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    	//document.getElementById('ShortTermTrack').innerHTML += ('<li>'+out+'</li>');
+					    	console.log(data.items[i].artists[0].id)
 					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
