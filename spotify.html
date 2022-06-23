@@ -159,6 +159,7 @@
 					  });
 
 					  // Get Short Term Tracks Genre
+					  genresShortTerm = 
 					  spotifyApi.getMyTopTracks(options = {limit: 2, time_range: 'short_term'})
 					  .then(function(data) {
 					    var topTracksShortTerm = data.items;
@@ -174,8 +175,11 @@
 					    	//document.getElementById('ShortTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
 					    	//document.getElementById('ShortTermTrack').innerHTML += ('<li>'+out+'</li>');
 					    	spotifyApi.getArtist(data.items[i].artists[0].id)
-							  .then(function(data) {
-							    console.log('Artist information', data);
+							  .then(function(data2) {
+							    //console.log('Artist information', data2);
+							    for (let j = 0; j < data2.length.genres.length; j++) {
+							    	console.log(data2.length.genres[j])
+							    }
 							  }, function(err) {
 							    console.error(err);
 							  });
