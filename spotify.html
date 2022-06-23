@@ -177,8 +177,8 @@
 					    	spotifyApi.getArtist(data.items[i].artists[0].id)
 							  .then(function(data2) {
 							    //console.log('Artist information', data2);
-							    for (let j = 0; j < data2.length.genres.length; j++) {
-							    	console.log(data2.length.genres[j])
+							    for (let j = 0; j < data2.genres.length; j++) {
+							    	console.log(data2.genres[j])
 							    }
 							  }, function(err) {
 							    console.error(err);
