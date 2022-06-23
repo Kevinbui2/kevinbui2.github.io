@@ -16,6 +16,7 @@
 			h1 {text-align: center;}
 		</style>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script type='module' src='spotify-web-api-js'></script>
 		<script>
 				function testAuth() {
 					var client_id = '2324d4a0a83a4e26b618f73ba2d5cd0b';
@@ -40,10 +41,7 @@
 					current_url = window.location.href;
 					access_token = current_url.split("#access_token=")[1].split("&")[0];
 					//document.write(access_token);
-					
-					var Spotify = require('spotify-web-api-js');
 					var s = new Spotify();
-
 					var spotifyApi = new SpotifyWebApi();
 				}
 		</script>
