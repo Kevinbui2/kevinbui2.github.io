@@ -15,6 +15,7 @@
 		<style>
 			h1 {text-align: center;}
 		</style>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -62,9 +63,21 @@
 									window.location.replace(url)
 								}
 								function testStat() {
+									import axios from "axios"
 									current_url = window.location.href;
 									access_token = current_url.split("#access_token=")[1].split("&")[0];
-									document.write(access_token);
+									//document.write(access_token);
+									playlist_endpoint = "https://api.spotify.com/v1/me/playlists"
+
+									function getPlaylists() {
+										axios.get(playlist_endpoint, {
+											headers: {
+												Authorization: "Bearer " + access_token,
+											},
+										}).then(response => {
+											document.write(response.data)
+										})
+									};
 								}
 							</script>
 							<p></p>
