@@ -47,7 +47,7 @@
 					//Getting User Top Artists
 					spotifyApi.getMyTopArtists()
 					  .then(function(data) {
-					    let topArtists = data.body.items;
+					    let topArtists = data.body;
 					    console.log(topArtists);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
