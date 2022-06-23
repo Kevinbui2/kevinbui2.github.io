@@ -51,7 +51,7 @@
 					    console.log('Short Term Artist')
 					    console.log(topArtistsShortTerm);
 					    for (let i = 0; i < topArtistsShortTerm.length; i++) {
-					    	document.getElementById('tempList').innerHTML += ('<li>'+i+'</li>');
+					    	document.getElementById('tempList').innerHTML += ('<li>'+data.items[i]+'</li>');
 					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
