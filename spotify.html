@@ -45,7 +45,7 @@
 					spotifyApi.setAccessToken(access_token);
 					
 					// Getting User Top Artists Short Term
-					var topArtistsShortTerm = spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'short_term'})
+					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'short_term'})
 					  .then(function(data) {
 					    var topArtistsShortTerm = data.items;
 					    console.log(topArtistsShortTerm);
@@ -56,7 +56,7 @@
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'medium_term'})
 					  .then(function(data) {
 					    var topArtistsMediumTerm = data.items;
-					    //console.log(topArtistsMediumTerm);
+					    console.log(topArtistsMediumTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
@@ -64,14 +64,10 @@
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'long_term'})
 					  .then(function(data) {
 					    var topArtistsLongTerm = data.items;
-					    //console.log(topArtistsLongTerm);
+					    console.log(topArtistsLongTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
-
-					 console.log(topArtistsShortTerm)
-					 //console.log(topArtistsMediumTerm)
-					 //console.log(topArtistsLongTerm)
 				}
 		</script>
 	</head>
