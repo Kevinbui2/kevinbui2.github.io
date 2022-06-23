@@ -51,7 +51,7 @@
 					    console.log('Short Term Artist')
 					    console.log(topArtistsShortTerm);
 
-					    document.getElementById('ShortTermArtistPic').innerHTML = data.items[0].images[0].url
+					    document.getElementById('ShortTermArtistPic').src = data.items[0].images[0].url
 					    document.getElementById('ShortTermArtistTitle').hidden = false;
 					    document.getElementById('ShortTermArtistPic').hidden = false;
 					    for (let i = 0; i < topArtistsShortTerm.length; i++) {
