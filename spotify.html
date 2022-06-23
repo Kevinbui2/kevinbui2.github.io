@@ -53,6 +53,7 @@
 
 					    document.getElementById('ShortTermArtistPic').src = data.items[0].images[1].url
 					    document.getElementById('ShortTermArtistTitle').hidden = false;
+
 					    document.getElementById('ShortTermArtistPic').hidden = false;
 					    for (let i = 0; i < topArtistsShortTerm.length; i++) {
 					    	document.getElementById('ShortTermArtist').innerHTML += ('<li>'+data.items[i].name+'</li>');
@@ -67,6 +68,9 @@
 					    var topArtistsMediumTerm = data.items;
 					    console.log('Medium Term Artist')
 					    console.log(topArtistsMediumTerm);
+
+					    document.getElementById('MediumTermArtistPic').src = data.items[0].images[1].url
+					    document.getElementById('ShortTermArtistTitle').hidden = false;
 
 					    document.getElementById('MediumTermArtistTitle').hidden = false;
 					    for (let i = 0; i < topArtistsMediumTerm.length; i++) {
@@ -170,12 +174,11 @@
 							<center>
 								<p>Get a glimpse of your spotify data such as your most listened to tracks and top artists in the short, medium, and long term. The short term time period is approximately the last 4 weeks; the medium term time period is approximately the last 6 months; the long term time period is comprised of your entire listening history.</p>
 							</center>
-							<!-- TESTING STUFF -->
+					
 							<img id="ShortTermArtistPic" src="" width = "200" height = "200" style="float: right" hidden></img>
-
-							<!-- END OF TEST -->
 							<h2 id='ShortTermArtistTitle' hidden>Your Top 5 Artists in the Last 4 Weeks</h2>
 							<ol id='ShortTermArtist'></ol>
+							<img id="MediumTermArtistPic" src="" width = "200" height = "200" style="float: right" hidden></img>
 							<h2 id='MediumTermArtistTitle' hidden>Your Top 5 Artists in the Last 6 Months</h2>
 							<ol id='MediumTermArtist'></ol>
 							<h2 id='LongTermArtistTitle' hidden>Your Top 5 Artists of All Time</h2>
@@ -186,6 +189,7 @@
 							<ol id='MediumTermTrack'></ol>
 							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs of All Time</h2>
 							<ol id='LongTermTrack'></ol>
+
 						</div>
 					</section>
 
