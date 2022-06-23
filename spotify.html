@@ -48,6 +48,7 @@
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'short_term'})
 					  .then(function(data) {
 					    var topArtistsShortTerm = data.items;
+					    console.log('Short Term Artist')
 					    console.log(topArtistsShortTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
@@ -57,6 +58,7 @@
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'medium_term'})
 					  .then(function(data) {
 					    var topArtistsMediumTerm = data.items;
+					    console.log('Medium Term Artist')
 					    console.log(topArtistsMediumTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
@@ -66,6 +68,7 @@
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'long_term'})
 					  .then(function(data) {
 					    var topArtistsLongTerm = data.items;
+					    console.log('Long Term Artist')
 					    console.log(topArtistsLongTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
@@ -75,6 +78,7 @@
 					spotifyApi.getMyTopTracks(options = {limit: 10, time_range: 'short_term'})
 					  .then(function(data) {
 					    var topTracksShortTerm = data.items;
+					    console.log('Short Term Tracks')
 					    console.log(topTracksShortTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
@@ -84,6 +88,7 @@
 					spotifyApi.getMyTopTracks(options = {limit: 10, time_range: 'medium_term'})
 					  .then(function(data) {
 					    var topTracksShortTerm = data.items;
+					    console.log('Medium Term Tracks')
 					    console.log(topTracksShortTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
@@ -92,7 +97,8 @@
 					// Getting User Top Tracks Long Term
 					spotifyApi.getMyTopTracks(options = {limit: 10, time_range: 'long_term'})
 					  .then(function(data) {
-					    var topTracksShortTerm = data.items;
+					    var topTracksShortTerm = datagi.items;
+					    console.log('Long Term Tracks')
 					    console.log(topTracksShortTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
