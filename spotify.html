@@ -44,6 +44,10 @@
 					//document.write(access_token);
 					var spotifyApi = new SpotifyWebApi();
 					spotifyApi.setAccessToken(access_token);
+
+					const unique = (value, index, self) => {
+					  return self.indexOf(value) === index
+					}
 					
 					// Getting User Top Artists Short Term
 					spotifyApi.getMyTopArtists(options = {limit: 5, time_range: 'short_term'})
@@ -180,6 +184,7 @@
 					  });
 					  console.log('Short Term Tracks Genre')
 					  console.log(genresShortTerm)
+					  console.log(genresShortTerm.filter(unique))
 
 					  // Get Medium Term Tracks Genre
 					  const genresMediumTerm = []
@@ -226,11 +231,22 @@
 					  console.log(genresLongTerm)
 
 					  // Generate Bar Chart
-					  var myChart = new Chart("myChart", {
-					  type: "bar",
-					  data: genresShortTerm,
-					  options: {}
-					});
+					  new Chart("myChart", {
+						  type: "pie",
+						  data: {
+						    labels: xValues,
+						    datasets: [{
+						      //backgroundColor: barColors,
+						      data: yValues
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: true,
+						      text: "World Wide Wine Production"
+						    }
+						  }
+						});
 				}
 		</script>
 	</head>
