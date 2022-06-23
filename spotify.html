@@ -97,7 +97,7 @@
 					// Getting User Top Tracks Long Term
 					spotifyApi.getMyTopTracks(options = {limit: 10, time_range: 'long_term'})
 					  .then(function(data) {
-					    var topTracksShortTerm = datagi.items;
+					    var topTracksShortTerm = data.items;
 					    console.log('Long Term Tracks')
 					    console.log(topTracksShortTerm);
 					  }, function(err) {
