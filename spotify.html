@@ -110,7 +110,9 @@
 
 					    document.getElementById('ShortTermTrackPic').hidden = false;
 					    for (let i = 0; i < topTracksShortTerm.length; i++) {
-					    	document.getElementById('ShortTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    	out = data.items[i].name + " by " + data.items[i].album.artists[0].name
+					    	//document.getElementById('ShortTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    	document.getElementById('ShortTermTrack').innerHTML += ('<li>'+out+'</li>');
 					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
@@ -128,7 +130,9 @@
 
 					    document.getElementById('MediumTermTrackPic').hidden = false;
 					    for (let i = 0; i < topTracksMediumTerm.length; i++) {
-					    	document.getElementById('MediumTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    	out = data.items[i].name + " by " + data.items[i].album.artists[0].name
+					    	//document.getElementById('MediumTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    	document.getElementById('MediumTermTrack').innerHTML += ('<li>'+out+'</li>');
 					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
