@@ -51,8 +51,7 @@
 					    console.log('Short Term Artist')
 					    console.log(topArtistsShortTerm);
 					    for (let i = 0; i < topArtistsShortTerm.length; i++) {
-					    	document.getElementById('tempList').innerHTML += ('<li>'+data.items[i].name+'</li>');
-					    	//console.log(topArtistsShortTerm[i].name)
+					    	document.getElementById('ShortTermArtist').innerHTML += ('<li>'+data.items[i].name+'</li>');
 					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
@@ -142,7 +141,7 @@
 							<center>
 								<p>Get a glimpse of your spotify data such as your most listened to tracks and top artists in the short, medium, and long term.</p>
 							</center>
-							<ul id='tempList'>
+							<ul id='ShortTermArtist'>
 								<li>apple</li>
 								<li>banana</li>
 							</ul>
