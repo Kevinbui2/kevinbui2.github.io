@@ -65,6 +65,11 @@
 					    var topArtistsMediumTerm = data.items;
 					    console.log('Medium Term Artist')
 					    console.log(topArtistsMediumTerm);
+
+					    document.getElementById('MediumTermArtistTitle').hidden = false;
+					    for (let i = 0; i < topArtistsMediumTerm.length; i++) {
+					    	document.getElementById('MediumTermArtist').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
@@ -75,6 +80,11 @@
 					    var topArtistsLongTerm = data.items;
 					    console.log('Long Term Artist')
 					    console.log(topArtistsLongTerm);
+
+					    document.getElementById('LongTermArtistTitle').hidden = false;
+					    for (let i = 0; i < topArtistsLongTerm.length; i++) {
+					    	document.getElementById('LongTermArtist').innerHTML += ('<li>'+data.items[i].name+'</li>');
+					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
@@ -141,10 +151,14 @@
 							</center>
 							<p></p>
 							<center>
-								<p>Get a glimpse of your spotify data such as your most listened to tracks and top artists in the short, medium, and long term.</p>
+								<p>Get a glimpse of your spotify data such as your most listened to tracks and top artists in the short, medium, and long term. The short term time period is approximately the last 4 weeks; the medium term time period is approximately the last 6 months; the long term time period is comprised of your entire listening history.</p>
 							</center>
 							<h2 id='ShortTermArtistTitle' hidden>Your Top 5 Artists in the Short Term</h2>
 							<ul id='ShortTermArtist'></ul>
+							<h3 id='MediumTermArtistTitle' hidden>Your Top 5 Artists in the Medium Term</h2>
+							<ul id='MediumTermArtist'></ul>
+							<h4 id='LongTermArtistTitle' hidden>Your Top 5 Artists in the Long Term</h2>
+							<ul id='LongTermArtist'></ul>
 						</div>
 					</section>
 
