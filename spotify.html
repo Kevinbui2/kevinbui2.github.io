@@ -40,17 +40,7 @@
 					current_url = window.location.href;
 					access_token = current_url.split("#access_token=")[1].split("&")[0];
 					//document.write(access_token);
-
-					const topArtist = async (token) => {
-						const out = await fetch("https://api.spotify.com/v1/me/top/artists", {
-						method: 'GET',
-						headers: {'Authorization': 'Bearer ' + access_token}
-					}); 
-						return out
-					}
-					result1 = topArtist(access_token)
-					//document.write(result1)
-					console.log(result1.data);
+					var spotifyApi = new SpotifyWebApi();
 				}
 		</script>
 	</head>
