@@ -43,16 +43,15 @@
 					//document.write(access_token);
 					var spotifyApi = new SpotifyWebApi();
 					spotifyApi.setAccessToken(access_token);
-					spotifyApi
-					  .getUserPlaylists() // note that we don't pass a user id
-					  .then(
-					    function (data) {
-					      console.log('User playlists', data);
-					    },
-					    function (err) {
-					      console.error(err);
-					    }
-					  );
+					
+					//Getting User Top Artists
+					spotifyApi.getMyTopArtists()
+					  .then(function(data) {
+					    let topArtists = data.body.items;
+					    console.log(topArtists);
+					  }, function(err) {
+					    console.log('Something went wrong!', err);
+					  });
 				}
 		</script>
 	</head>
