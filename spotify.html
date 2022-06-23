@@ -48,7 +48,7 @@
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'short_term'})
 					  .then(function(data) {
 					    let topArtistsShortTerm = data.items;
-					    //console.log(topArtistsShortTerm);
+					    console.log(topArtistsShortTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
@@ -56,7 +56,7 @@
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'medium_term'})
 					  .then(function(data) {
 					    let topArtistsMediumTerm = data.items;
-					    //console.log(topArtistsMediumTerm);
+					    console.log(topArtistsMediumTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
@@ -64,7 +64,7 @@
 					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'long_term'})
 					  .then(function(data) {
 					    let topArtistsLongTerm = data.items;
-					    //console.log(topArtistsLongTerm);
+					    console.log(topArtistsLongTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
