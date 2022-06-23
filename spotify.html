@@ -123,7 +123,10 @@
 					    console.log('Medium Term Tracks')
 					    console.log(topTracksMediumTerm);
 
+					    document.getElementById('MediumTermTrackPic').src = data.items[0].album.images[1].url
 					    document.getElementById('MediumTermTrackTitle').hidden = false;
+
+					    document.getElementById('MediumTermTrackPic').hidden = false;
 					    for (let i = 0; i < topTracksMediumTerm.length; i++) {
 					    	document.getElementById('MediumTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
 					    }
@@ -138,7 +141,10 @@
 					    console.log('Long Term Tracks')
 					    console.log(topTracksLongTerm);
 
+					    document.getElementById('LongTermTrackPic').src = data.items[0].album.images[1].url
 					    document.getElementById('LongTermTrackTitle').hidden = false;
+
+					    document.getElementById('LongTermTrackPic').hidden = false;
 					    for (let i = 0; i < topTracksLongTerm.length; i++) {
 					    	document.getElementById('LongTermTrack').innerHTML += ('<li>'+data.items[i].name+'</li>');
 					    }
@@ -202,10 +208,12 @@
 							<ol id='ShortTermTrack'></ol>
 
 							<!-- Medium Term Track -->
+							<img id="MediumTermTrackPic" src="" width = "200" height = "200" style="float: right" hidden></img>
 							<h2 id='MediumTermTrackTitle' hidden>Your Top 5 Songs in the Last 6 Months</h2>
 							<ol id='MediumTermTrack'></ol>
 
 							<!-- Long Term Track -->
+							<img id="LongTermTrackPic" src="" width = "200" height = "200" style="float: right" hidden></img>
 							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs of All Time</h2>
 							<ol id='LongTermTrack'></ol>
 
