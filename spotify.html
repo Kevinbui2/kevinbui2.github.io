@@ -159,12 +159,12 @@
 					  });
 
 					  // Get Short Term Tracks Genre
-					  genresShortTerm = 
+					  const genresShortTerm = []
 					  spotifyApi.getMyTopTracks(options = {limit: 2, time_range: 'short_term'})
 					  .then(function(data) {
 					    var topTracksShortTerm = data.items;
-					    console.log('Short Term Tracks Genres')
-					    console.log(topTracksShortTerm);
+					    //console.log('Short Term Tracks Genres')
+					    //console.log(topTracksShortTerm);
 
 					    //document.getElementById('ShortTermTrackPic').src = data.items[0].album.images[1].url
 					    //document.getElementById('ShortTermTrackTitle').hidden = false;
@@ -178,7 +178,8 @@
 							  .then(function(data2) {
 							    //console.log('Artist information', data2);
 							    for (let j = 0; j < data2.genres.length; j++) {
-							    	console.log(data2.genres[j])
+							    	//console.log(data2.genres[j])
+							    	genresShortTerm.push(data2.genres[j])
 							    }
 							  }, function(err) {
 							    console.error(err);
@@ -187,6 +188,7 @@
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
+					  console.log(genresShortTerm)
 				}
 		</script>
 	</head>
