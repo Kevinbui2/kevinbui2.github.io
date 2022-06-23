@@ -70,7 +70,7 @@
 					    console.log(topArtistsMediumTerm);
 
 					    document.getElementById('MediumTermArtistPic').src = data.items[0].images[1].url
-					    document.getElementById('ShortTermArtistTitle').hidden = false;
+					    document.getElementById('MediumTermArtistTitle').hidden = false;
 
 					    document.getElementById('MediumTermArtistPic').hidden = false;
 					    for (let i = 0; i < topArtistsMediumTerm.length; i++) {
@@ -87,7 +87,10 @@
 					    console.log('Long Term Artist')
 					    console.log(topArtistsLongTerm);
 
+					    document.getElementById('LongTermArtistPic').src = data.items[0].images[1].url
 					    document.getElementById('LongTermArtistTitle').hidden = false;
+
+					    document.getElementById('LongTermArtistPic').hidden = false;
 					    for (let i = 0; i < topArtistsLongTerm.length; i++) {
 					    	document.getElementById('LongTermArtist').innerHTML += ('<li>'+data.items[i].name+'</li>');
 					    }
@@ -178,15 +181,21 @@
 							<img id="ShortTermArtistPic" src="" width = "200" height = "200" style="float: right" hidden></img>
 							<h2 id='ShortTermArtistTitle' hidden>Your Top 5 Artists in the Last 4 Weeks</h2>
 							<ol id='ShortTermArtist'></ol>
+
 							<img id="MediumTermArtistPic" src="" width = "200" height = "200" style="float: right" hidden></img>
 							<h2 id='MediumTermArtistTitle' hidden>Your Top 5 Artists in the Last 6 Months</h2>
 							<ol id='MediumTermArtist'></ol>
+
+							<img id="LongTermArtistPic" src="" width = "200" height = "200" style="float: right" hidden></img>
 							<h2 id='LongTermArtistTitle' hidden>Your Top 5 Artists of All Time</h2>
 							<ol id='LongTermArtist'></ol>
+
 							<h2 id='ShortTermTrackTitle' hidden>Your Top 5 Songs in the Last 4 Weeks</h2>
 							<ol id='ShortTermTrack'></ol>
+
 							<h2 id='MediumTermTrackTitle' hidden>Your Top 5 Songs in the Last 6 Months</h2>
 							<ol id='MediumTermTrack'></ol>
+							
 							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs of All Time</h2>
 							<ol id='LongTermTrack'></ol>
 
