@@ -45,10 +45,9 @@
 					spotifyApi.setAccessToken(access_token);
 					
 					// Getting User Top Artists Short Term
-					spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'short_term'})
+					topArtistsShortTerm = spotifyApi.getMyTopArtists(options = {limit: 10, time_range: 'short_term'})
 					  .then(function(data) {
-					    let topArtistsShortTermTemp = data.items;
-					    const topArtistsShortTerm = topArtistsShortTermTemp
+					    let topArtistsShortTerm = data.items;
 					    console.log(topArtistsShortTerm);
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
