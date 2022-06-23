@@ -45,8 +45,8 @@
 					var spotifyApi = new SpotifyWebApi();
 					spotifyApi.setAccessToken(access_token);
 
-					const unique = (value, index, self) => {
-					  return self.indexOf(value) === index
+					function onlyUnique(value, index, self) {
+					  return self.indexOf(value) === index;
 					}
 					
 					// Getting User Top Artists Short Term
@@ -184,7 +184,7 @@
 					  });
 					  console.log('Short Term Tracks Genre')
 					  console.log(genresShortTerm)
-					  var uniqueGenresShortTerm = new Set(genresShortTerm);
+					  var uniqueGenresShortTerm = genresShortTerm.filter(onlyUnique);
 					  console.log('Short Term Tracks unique')
 					  console.log(uniqueGenresShortTerm)
 
