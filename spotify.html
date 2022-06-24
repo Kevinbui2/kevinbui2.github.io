@@ -45,6 +45,8 @@
 					var spotifyApi = new SpotifyWebApi();
 					spotifyApi.setAccessToken(access_token);
 
+					document.getElementById('testStatButton').disabled = true;
+
 					function onlyUnique(value, index, self) {
 					  return self.indexOf(value) === index;
 					}
@@ -247,7 +249,6 @@
 						    }
 						  }
 						});
-					  document.getElementById('testStatButton').disabled = true;
 				}
 		</script>
 	</head>
