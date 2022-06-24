@@ -165,6 +165,7 @@
 
 					  // Get Short Term Tracks Genre
 					  const genresShortTerm = []
+					  var shortGenreCounter = 0
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'short_term'})
 					  .then(function(data) {
 					    var topTracksShortTermGenres = data.items;
@@ -173,6 +174,7 @@
 					    	spotifyApi.getArtist(data.items[i].artists[0].id)
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
+							    	shortGenreCounter += 1
 							    	genresShortTerm.push(data2.genres[j])
 							    }
 							  }, function(err) {
@@ -184,11 +186,8 @@
 					  });
 					  console.log('Short Term Tracks Genre')
 					  console.log(genresShortTerm)
-					  //console.log(genresShortTerm)
-		
-					  var uniqueGenresShortTerm = genresShortTerm;
 					  console.log('Short Term Tracks unique')
-					  console.log(uniqueGenresShortTerm)
+					  console.log(shortGenreCounter)
 
 					  // Get Medium Term Tracks Genre
 					  const genresMediumTerm = []
