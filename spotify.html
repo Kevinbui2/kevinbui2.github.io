@@ -174,8 +174,6 @@
 					    	spotifyApi.getArtist(data.items[i].artists[0].id)
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
-							    	shortGenreCounter += 1
-							    	console.log(shortGenreCounter)
 							    	genresShortTerm.push(data2.genres[j])
 							    }
 							  }, function(err) {
@@ -185,12 +183,8 @@
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
-					  var genresShortTerm2 = new Array(shortGenreCounter)
-
 					  console.log('Short Term Tracks Genre')
 					  console.log(genresShortTerm)
-					  console.log('Short Term Tracks unique')
-					  console.log(genresShortTerm2)
 
 					  // Get Medium Term Tracks Genre
 					  const genresMediumTerm = []
