@@ -164,8 +164,8 @@
 					  });
 
 					  // Get Short Term Tracks Genre
-					  const genresShortTerm = []
-					  const shortGenreCounter = 0
+					  var genresShortTerm = []
+					  var shortGenreCounter = 0
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'short_term'})
 					  .then(function(data) {
 					    var topTracksShortTermGenres = data.items;
