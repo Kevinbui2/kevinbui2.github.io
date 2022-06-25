@@ -254,6 +254,14 @@
 					console.log(countsMedium)
 					console.log(countsLong)
 
+					// TEST
+					const asArrayShort = Object.entries(obj);
+					const filteredShort = asArrayShort.filter(([key, value]) => value >= 2);
+					const shortGenreGreater2 = Object.fromEntries(filteredShort);
+
+					console.log(shortGenreGreater2)
+					// END TEST
+
 					for (let i = 0; i < uniqueGenresShortTerm.length; i++) {
 						genreShortCounter[i] = countsShort[uniqueGenresShortTerm[i]]
 					}
