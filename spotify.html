@@ -177,6 +177,9 @@
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
 							    	genresShortTerm.push(data2.genres[j])
+							    	// TEMP
+							    	document.getElementById('temp').innerHTML += ('<li>'+data2.genres[j]+'</li>');
+							    	// TEMP
 							    }
 							  }, function(err) {
 							    console.error(err);
@@ -250,8 +253,6 @@
 						  }
 						});
 						*/
-
-						console.log(genresShortTerm)
 				}
 		</script>
 	</head>
@@ -321,6 +322,8 @@
 							<!-- Eventual Chart 
 							<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 							-->
+
+							<ul id='temp'></ul>
 
 						</div>
 					</section>
