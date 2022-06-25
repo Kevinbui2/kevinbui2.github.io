@@ -326,7 +326,7 @@
 					genreLongColors = []
 
 					for (let i = 0; i < genreLongCounter.length; i++) {
-						genreShortColors[i] = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+						genreLongColors[i] = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
 					}
 
 					  new Chart("myChartLong", {
@@ -417,21 +417,27 @@
 							<center>
 								<h3 id="shortGraphText" hidden>Genres from Top Tracks in the Last 4 Weeks</h3>
 							</center>
-							<canvas id="myChartShort" style="width:100%;max-width:700px" hidden></canvas>
+							<center>
+								<canvas id="myChartShort" style="width:100%;max-width:700px" hidden></canvas>
+							</center>
 							<p></p>
 
 							<!-- Medium Term Genre Graph -->
 							<center>
 								<h3 id="mediumGraphText" hidden>Genres from Top Tracks in the Last 6 Months</h3>
 							</center>
-							<canvas id="myChartMedium" style="width:100%;max-width:700px" hidden></canvas>
+							<center>
+								<canvas id="myChartMedium" style="width:100%;max-width:700px" hidden></canvas>
+							</center>
 							<p></p>
 
 							<!-- Long Term Genre Graph -->
 							<center>
 								<h3 id="longGraphText" hidden>Genres from Top Tracks of All Time</h3>
 							</center>
-							<canvas id="myChartLong" style="width:100%;max-width:700px" hidden></canvas>
+							<center>
+								<canvas id="myChartLong" style="width:100%;max-width:700px" hidden></canvas>
+							</center>
 
 						</div>
 					</section>
