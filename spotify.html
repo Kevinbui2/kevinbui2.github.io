@@ -259,8 +259,11 @@
 						  }
 						});
 						*/
-						var temp1 = document.getElementById('shortTermGenre').getElementsByTagName('ul')
-						console.log(temp1)
+				}
+				function genreGetter() {
+					var temp1 = document.getElementById('shortTermGenre').getElementsByTagName('ul')
+					console.log(temp1)
+					console.log(genresShortTerm)
 				}
 		</script>
 	</head>
@@ -290,7 +293,7 @@
 							</center>
 							<p></p>
 							<center>
-								<button id="testStatButton" onClick="testStat()">Generate Statistics</button>
+								<button id="testStatButton" onClick="testStat();genreGetter();">Generate Statistics</button>
 							</center>
 							<p></p>
 							<center>
