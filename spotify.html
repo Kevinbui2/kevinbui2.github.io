@@ -271,7 +271,7 @@
 					// Generate Bar Chart (WILL TRY AND DO AHHHH)
 					document.getElementById('myChart').hidden = false;
 
-					  new Chart("myChart", {
+					  new Chart("myChartShort", {
 						  type: "pie",
 						  data: {
 						    labels: uniqueGenresShortTerm,
@@ -301,7 +301,7 @@
 						  },
 						  options: {
 						    title: {
-						      display: true,
+						      display: false,
 						      text: "Genres from Short Term Tracks"
 						    }
 						  }
@@ -374,7 +374,11 @@
 							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs of All Time</h2>
 							<ol id='LongTermTrack'></ol>
 
-							<canvas id="myChart" style="width:100%;max-width:700px" hidden></canvas>
+							<center>
+								<h3>Genres from Top Tracks in the Last 4 Weeks</h3>
+							</center>
+
+							<canvas id="myChartShort" style="width:100%;max-width:700px" hidden></canvas>
 						</div>
 					</section>
 
