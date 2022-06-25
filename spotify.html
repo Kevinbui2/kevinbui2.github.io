@@ -226,7 +226,7 @@
 						document.getElementById('testGraphButton').disabled = false;
 				}
 				function genreGetter() {
-					document.getElementById('testGraphButton').disabled = true;;
+					document.getElementById('testGraphButton').disabled = true;
 
 					uniqueGenresShortTerm = Array.from(new Set(genresShortTerm))
 					uniqueGenresMediumTerm = Array.from(new Set(genresMediumTerm))
@@ -269,8 +269,8 @@
 					console.log(genreLongCounter)
 
 					// Generate Bar Chart (WILL TRY AND DO AHHHH)
-					document.getElemenyById('myChart').hidden = false;
-					
+					document.getElementById('myChart').disabled = false;
+
 					  new Chart("myChart", {
 						  type: "pie",
 						  data: {
