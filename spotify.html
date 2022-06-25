@@ -186,9 +186,6 @@
 					    console.log('Something went wrong!', err);
 					  });
 
-					  console.log('Short Term Tracks Genre')
-					  console.log(genresShortTerm)
-
 					  // Get Medium Term Tracks Genre
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'medium_term'})
 					  .then(function(data) {
@@ -207,8 +204,6 @@
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
-					  console.log('Medium Term Tracks Genre')
-					  console.log(genresMediumTerm)
 
 					  // Get Long Term Tracks Genre
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'long_term'})
@@ -228,8 +223,6 @@
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
-					  console.log('Long Term Tracks Genre')
-					  console.log(genresLongTerm)
 
 					  // Generate Bar Chart (WILL TRY AND DO AHHHH)
 					  /*
