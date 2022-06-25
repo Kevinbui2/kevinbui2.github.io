@@ -270,6 +270,7 @@
 
 					// Generate Pie Chart Short
 					document.getElementById('myChartShort').hidden = false;
+					document.getElementById('shortGraphText').hidden = false;
 					genreShortColors = []
 
 					for (let i = 0; i < genreShortCounter.length; i++) {
@@ -295,6 +296,7 @@
 
 					// Generate Pie Chart Medium
 					document.getElementById('myChartMedium').hidden = false;
+					document.getElementById('mediumGraphText').hidden = false;
 					genreMediumColors = []
 
 					for (let i = 0; i < genreMediumCounter.length; i++) {
@@ -304,7 +306,7 @@
 					  new Chart("myChartMedium", {
 						  type: "pie",
 						  data: {
-						    labels: uniqueGenresMediumtTerm,
+						    labels: uniqueGenresMediumTerm,
 						    datasets: [{
 						      backgroundColor: genreMediumColors,
 						      data: genreMediumCounter
@@ -320,6 +322,7 @@
 						
 					// Generate Pie Chart Long
 					document.getElementById('myChartLong').hidden = false;
+					document.getElementById('longGraphText').hidden = false;
 					genreShortColors = []
 
 					for (let i = 0; i < genreLongCounter.length; i++) {
@@ -412,19 +415,19 @@
 
 							<!-- Short Term Genre Graph -->
 							<center>
-								<h3>Genres from Top Tracks in the Last 4 Weeks</h3>
+								<h3 id="shortGraphText" hidden>Genres from Top Tracks in the Last 4 Weeks</h3>
 							</center>
 							<canvas id="myChartShort" style="width:100%;max-width:700px" hidden></canvas>
 
 							<!-- Medium Term Genre Graph -->
 							<center>
-								<h3>Genres from Top Tracks in the Last 6 Months</h3>
+								<h3 id="mediumGraphText" hidden>Genres from Top Tracks in the Last 6 Months</h3>
 							</center>
 							<canvas id="myChartMedium" style="width:100%;max-width:700px" hidden></canvas>
 
 							<!-- Long Term Genre Graph -->
 							<center>
-								<h3>Genres from Top Tracks of All Time</h3>
+								<h3 id="longGraphText" hidden>Genres from Top Tracks of All Time</h3>
 							</center>
 							<canvas id="myChartLong" style="width:100%;max-width:700px" hidden></canvas>
 
