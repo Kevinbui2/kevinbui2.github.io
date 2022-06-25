@@ -177,9 +177,6 @@
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
 							    	genresShortTerm.push(data2.genres[j])
-							    	// Using ul
-							    	document.getElementById('shortTermGenre').innerHTML += ('<li>'+data2.genres[j]+'</li>');
-							    	// Using ul
 							    }
 							  }, function(err) {
 							    console.error(err);
@@ -202,9 +199,6 @@
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
 							    	genresMediumTerm.push(data2.genres[j])
-							    	// Using ul
-							    	document.getElementById('mediumTermGenre').innerHTML += ('<li>'+data2.genres[j]+'</li>');
-							    	// Using ul
 							    }
 							  }, function(err) {
 							    console.error(err);
@@ -226,9 +220,6 @@
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
 							    	genresLongTerm.push(data2.genres[j])
-							    	// Using ul
-							    	document.getElementById('longTermGenre').innerHTML += ('<li>'+data2.genres[j]+'</li>');
-							    	// Using ul
 							    }
 							  }, function(err) {
 							    console.error(err);
@@ -261,8 +252,6 @@
 						*/
 				}
 				function genreGetter() {
-					var temp1 = document.getElementById('shortTermGenre').getElementsByTagName('ul')
-					console.log(temp1)
 					console.log(genresShortTerm)
 				}
 		</script>
@@ -334,11 +323,6 @@
 							<!-- Eventual Chart 
 							<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 							-->
-
-							<ul id='shortTermGenre'></ul>
-							<ul id='mediumTermGenre'><ul>
-							<ul id='longTermGenre'></ul>
-
 						</div>
 					</section>
 
