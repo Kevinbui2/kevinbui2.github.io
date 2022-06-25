@@ -254,6 +254,8 @@
 					console.log(countsMedium)
 					console.log(countsLong)
 
+					const _ = require("lodash");
+
 					const atLeast2Short = _.flow([
 					  Object.entries,
 					  arr => arr.filter(([key, value]) => value >= 2),
