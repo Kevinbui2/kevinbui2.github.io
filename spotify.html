@@ -18,6 +18,8 @@
 		<script>
 
 				var genresShortTerm = []
+				var genresMediumTerm = []
+				var genresLongTerm = []
 
 				function testAuth() {
 					var client_id = '2324d4a0a83a4e26b618f73ba2d5cd0b';
@@ -169,7 +171,6 @@
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'short_term'})
 					  .then(function(data) {
 					    var topTracksShortTermGenres = data.items;
-					    var counter = 0;
 
 					    for (let i = 0; i < topTracksShortTermGenres.length; i++) {
 					    	spotifyApi.getArtist(data.items[i].artists[0].id)
@@ -184,11 +185,11 @@
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
+
 					  console.log('Short Term Tracks Genre')
 					  console.log(genresShortTerm)
 
 					  // Get Medium Term Tracks Genre
-					  const genresMediumTerm = []
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'medium_term'})
 					  .then(function(data) {
 					    var topTracksMediumTermGenres = data.items;
@@ -210,7 +211,6 @@
 					  console.log(genresMediumTerm)
 
 					  // Get Long Term Tracks Genre
-					  const genresLongTerm = []
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'long_term'})
 					  .then(function(data) {
 					    var topTracksLongTermGenres = data.items;
