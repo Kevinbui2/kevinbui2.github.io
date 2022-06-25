@@ -270,33 +270,18 @@
 
 					// Generate Bar Chart (WILL TRY AND DO AHHHH)
 					document.getElementById('myChartShort').hidden = false;
+					genreShortColors = []
+
+					for (let i = 0; i < genreShortCounter.length; i++) {
+						genreShortColors[i] = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+					}
 
 					  new Chart("myChartShort", {
 						  type: "pie",
 						  data: {
 						    labels: uniqueGenresShortTerm,
 						    datasets: [{
-						      backgroundColor: [
-						      /*
-						      	  'rgb(255, 99, 132)',
-							      'rgb(54, 162, 235)',
-							      'rgb(255, 205, 86)',
-							      'rgb(255, 99, 132)',
-							      'rgb(54, 162, 235)',
-							      'rgb(255, 205, 86)',
-							      'rgb(255, 99, 132)',
-							      'rgb(54, 162, 235)',
-							      'rgb(255, 205, 86)',
-							      'rgb(255, 99, 132)',
-							      'rgb(54, 162, 235)',
-							      'rgb(255, 205, 86)',
-							      'rgb(255, 99, 132)',
-							      'rgb(54, 162, 235)',
-							      'rgb(255, 205, 86)',
-							      'rgb(255, 99, 132)',
-							      'rgb(54, 162, 235)',
-							      */
-						      ],
+						      backgroundColor: genreShortColors,
 						      //data: countsShort
 						      data: genreShortCounter
 						    }]
