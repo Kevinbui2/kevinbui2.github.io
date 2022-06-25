@@ -177,9 +177,9 @@
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
 							    	genresShortTerm.push(data2.genres[j])
-							    	// TEMP
-							    	document.getElementById('temp').innerHTML += ('<li>'+data2.genres[j]+'</li>');
-							    	// TEMP
+							    	// Using ul
+							    	document.getElementById('shortTermGenre').innerHTML += ('<li>'+data2.genres[j]+'</li>');
+							    	// Using ul
 							    }
 							  }, function(err) {
 							    console.error(err);
@@ -202,6 +202,9 @@
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
 							    	genresMediumTerm.push(data2.genres[j])
+							    	// Using ul
+							    	document.getElementById('mediumTermGenre').innerHTML += ('<li>'+data2.genres[j]+'</li>');
+							    	// Using ul
 							    }
 							  }, function(err) {
 							    console.error(err);
@@ -223,6 +226,9 @@
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
 							    	genresLongTerm.push(data2.genres[j])
+							    	// Using ul
+							    	document.getElementById('longTermGenre').innerHTML += ('<li>'+data2.genres[j]+'</li>');
+							    	// Using ul
 							    }
 							  }, function(err) {
 							    console.error(err);
@@ -323,7 +329,9 @@
 							<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 							-->
 
-							<ul id='temp'></ul>
+							<ul id='shortTermGenre' hidden></ul>
+							<ul id='mediumTermGenre' hidden><ul>
+							<ul id='longTermGenre' hidden></ul>
 
 						</div>
 					</section>
