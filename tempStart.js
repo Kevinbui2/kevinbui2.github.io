@@ -60,4 +60,4 @@ current_url = window.location.href;
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
-						document.getElementById('testGraphButton').disabled = false;
+						//document.getElementById('testGraphButton').disabled = false;
