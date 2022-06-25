@@ -255,20 +255,22 @@
 				function genreGetter() {
 					document.getElementById('testGraphButton').disabled = true;;
 
+					/*
 					uniqueGenresShortTerm = Array.from(new Set(genresShortTerm))
 					uniqueGenresMediumTerm = Array.from(new Set(genresMediumTerm))
 					uniqueGenresLongTerm = Array.from(new Set(genresLongTerm))
+					*/
 					countsShort = {}
 					countsMedium = {}
 					countsLong = {}
 
-					for (const num of uniqueGenresShortTerm) {
+					for (const num of genresShortTerm) {
 					  countsShort[num] = countsShort[num] ? countsShort[num] + 1 : 1;
 					}
-					for (const num of uniqueGenresMediumTerm) {
+					for (const num of genresMediumTerm) {
 					  countsMedium[num] = countsMedium[num] ? countsMedium[num] + 1 : 1;
 					}
-					for (const num of uniqueGenresLongTerm) {
+					for (const num of genresLongTerm) {
 					  countsLong[num] = countsLong[num] ? countsLong[num] + 1 : 1;
 					}
 
