@@ -348,7 +348,7 @@
 					//document.write(access_token);
 					var spotifyApi = new SpotifyWebApi();
 					spotifyApi.setAccessToken(access_token)
-					
+
 					// Get Short Term Tracks Genre
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'short_term'})
 					  .then(function(data) {
@@ -427,6 +427,9 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
+							<!-- Test -->
+							<body onload="startGenre()"></body>
+							<!-- Test -->
 							<h1 class="major">A Glimpse Of Your Spotify Statistics</h1>
 							<center>
 								<span class="image-center"><img src="images/spotify-icon-green-logo-8.png"  width = "100" height = '100' alt="" /></span>
