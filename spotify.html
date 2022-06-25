@@ -16,11 +16,8 @@
 			h1 {text-align: center;}
 		</style>
 		<script>
-
 				var genresShortTerm = []
-				var genresMediumTerm = []
-				var genresLongTerm = []
-
+				
 				function testAuth() {
 					var client_id = '2324d4a0a83a4e26b618f73ba2d5cd0b';
 					var redirect_uri = 'https://kevinbui2.github.io/spotify';
@@ -189,6 +186,7 @@
 					  console.log(genresShortTerm)
 
 					  // Get Medium Term Tracks Genre
+					  const genresMediumTerm = []
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'medium_term'})
 					  .then(function(data) {
 					    var topTracksMediumTermGenres = data.items;
@@ -210,6 +208,7 @@
 					  console.log(genresMediumTerm)
 
 					  // Get Long Term Tracks Genre
+					  const genresLongTerm = []
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'long_term'})
 					  .then(function(data) {
 					    var topTracksLongTermGenres = data.items;
@@ -232,7 +231,7 @@
 
 					  // Generate Bar Chart (WILL TRY AND DO AHHHH)
 					  /*
-					  new Chart("myChartShortGenre", {
+					  new Chart("myChart", {
 						  type: "pie",
 						  data: {
 						    labels: xValues,
@@ -315,8 +314,8 @@
 							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs of All Time</h2>
 							<ol id='LongTermTrack'></ol>
 
-							<!--
-							<canvas id="myChartShortGenre" style="width:100%;max-width:700px"></canvas>
+							<!-- Eventual Chart 
+							<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 							-->
 
 						</div>
