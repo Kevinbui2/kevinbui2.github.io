@@ -250,14 +250,11 @@
 						  }
 						});
 						*/
-						document.getElementById('testGraphButton').hidden = false;
+						document.getElementById('testGraphButton').disabled = false;
 				}
 				function genreGetter() {
 					document.getElementById('testGraphButton').disabled = true;;
 
-					console.log(genresShortTerm)
-					console.log(genresMediumTerm)
-					console.log(genresLongTerm)
 					uniqueGenresShortTerm = Array.from(new Set(genresShortTerm))
 					uniqueGenresMediumTerm = Array.from(new Set(genresMediumTerm))
 					uniqueGenresLongTerm = Array.from(new Set(genresLongTerm))
@@ -294,6 +291,7 @@
 							<p></p>
 							<center>
 								<button id="testStatButton" onClick="testStat()">Generate Statistics</button>
+								<button id="testGraphButton" onClick="genreGetter()" disabled>Generate Graphs</button>
 							</center>
 							<p></p>
 							<center>
@@ -329,10 +327,6 @@
 							<img id="LongTermTrackPic" src="" width = "200" height = "200" style="float: right" hidden></img>
 							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs of All Time</h2>
 							<ol id='LongTermTrack'></ol>
-
-							<center>
-								<button id="testGraphButton" onClick="genreGetter()" hidden>Generate Graphs</button>
-							</center>
 
 							<!-- Eventual Chart 
 							<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
