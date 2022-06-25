@@ -255,14 +255,17 @@
 				function genreGetter() {
 					document.getElementById('testGraphButton').disabled = true;;
 
-					/*
 					uniqueGenresShortTerm = Array.from(new Set(genresShortTerm))
 					uniqueGenresMediumTerm = Array.from(new Set(genresMediumTerm))
 					uniqueGenresLongTerm = Array.from(new Set(genresLongTerm))
-					*/
+
 					countsShort = {}
 					countsMedium = {}
 					countsLong = {}
+
+					genreShortCounter = []
+					genreMediumCounter = []
+					genreLongCounter = []
 
 					for (const num of genresShortTerm) {
 					  countsShort[num] = countsShort[num] ? countsShort[num] + 1 : 1;
@@ -277,6 +280,21 @@
 					console.log(countsShort)
 					console.log(countsMedium)
 					console.log(countsLong)
+
+					for (let i = 0; i < uniqueGenresShortTerm.length; i++) {
+						genreShortCounter[i] = countsShort[uniqueGenresShortTerm[i]]
+					}
+					for (let i = 0; i < uniqueGenresMediumTerm.length; i++) {
+						genreMediumCounter[i] = countsMedium[uniqueGenresMediumTerm[i]]
+					}
+					for (let i = 0; i < uniqueGenresLongTerm.length; i++) {
+						genreLongCounter[i] = countsLong[uniqueGenresLongTerm[i]]
+					}
+
+					console.log(genreShortCounter)
+					console.log(genreMediumCounter)
+					console.log(genreLongCounter)
+
 				}
 		</script>
 	</head>
