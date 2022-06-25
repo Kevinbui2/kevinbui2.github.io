@@ -16,6 +16,9 @@
 			h1 {text-align: center;}
 		</style>
 		<script>
+
+				var genresShortTerm = []
+
 				function testAuth() {
 					var client_id = '2324d4a0a83a4e26b618f73ba2d5cd0b';
 					var redirect_uri = 'https://kevinbui2.github.io/spotify';
@@ -163,8 +166,6 @@
 					  });
 
 					  // Get Short Term Tracks Genre
-					  var genresShortTerm = []
-					  var shortGenreCounter = 0
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'short_term'})
 					  .then(function(data) {
 					    var topTracksShortTermGenres = data.items;
