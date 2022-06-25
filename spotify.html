@@ -175,13 +175,13 @@
 					    	spotifyApi.getArtist(data.items[i].artists[0].id)
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
-							    	//genresShortTerm.push(data2.genres[j])
-							    	genresShortTerm[counter] = data2.genres[j]
-							    	counter += 1;
+							    	genresShortTerm.push(data2.genres[j])
 							    }
 							  }, function(err) {
 							    console.error(err);
 							  });
+							  console.log("PLEASE")
+							  console.log(genresShortTerm)
 					    }
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
