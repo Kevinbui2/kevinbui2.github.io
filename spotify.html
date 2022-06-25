@@ -258,9 +258,23 @@
 					uniqueGenresShortTerm = Array.from(new Set(genresShortTerm))
 					uniqueGenresMediumTerm = Array.from(new Set(genresMediumTerm))
 					uniqueGenresLongTerm = Array.from(new Set(genresLongTerm))
-					console.log(uniqueGenresShortTerm)
-					console.log(uniqueGenresMediumTerm)
-					console.log(uniqueGenresLongTerm)
+					countsShort = {}
+					countsMedium = {}
+					countsLong = {}
+
+					for (const num of uniqueGenresShortTerm) {
+					  countsShort[num] = countsShort[num] ? countsShort[num] + 1 : 1;
+					}
+					for (const num of uniqueGenresMediumTerm) {
+					  countsMedium[num] = countsMedium[num] ? countsMedium[num] + 1 : 1;
+					}
+					for (const num of uniqueGenresLongTerm) {
+					  countsLong[num] = countsLong[num] ? countsLong[num] + 1 : 1;
+					}
+
+					console.log(countsShort)
+					console.log(countsMedium)
+					console.log(countsLong)
 				}
 		</script>
 	</head>
