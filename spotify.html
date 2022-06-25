@@ -41,17 +41,16 @@
 					window.location.replace(url)
 				}
 				function testStat() {
+					/* SHOULD BE UNNECESSARY NOW
 					current_url = window.location.href;
 					access_token = current_url.split("#access_token=")[1].split("&")[0];
 					//document.write(access_token);
 					var spotifyApi = new SpotifyWebApi();
 					spotifyApi.setAccessToken(access_token);
+					*/
 
 					document.getElementById('testStatButton').disabled = true;
 
-					function onlyUnique(value, index, self) {
-					  return self.indexOf(value) === index;
-					}
 					
 					// Getting User Top Artists Short Term
 					spotifyApi.getMyTopArtists(options = {limit: 5, time_range: 'short_term'})
@@ -224,189 +223,6 @@
 					    console.log('Something went wrong!', err);
 					  });
 						document.getElementById('testGraphButton').disabled = false;
-				}
-				function genreGetter() {
-					document.getElementById('testGraphButton').disabled = true;
-
-					uniqueGenresShortTerm = Array.from(new Set(genresShortTerm))
-					uniqueGenresMediumTerm = Array.from(new Set(genresMediumTerm))
-					uniqueGenresLongTerm = Array.from(new Set(genresLongTerm))
-
-					countsShort = {}
-					countsMedium = {}
-					countsLong = {}
-
-					genreShortCounter = []
-					genreMediumCounter = []
-					genreLongCounter = []
-
-					for (const num of genresShortTerm) {
-					  countsShort[num] = countsShort[num] ? countsShort[num] + 1 : 1;
-					}
-					for (const num of genresMediumTerm) {
-					  countsMedium[num] = countsMedium[num] ? countsMedium[num] + 1 : 1;
-					}
-					for (const num of genresLongTerm) {
-					  countsLong[num] = countsLong[num] ? countsLong[num] + 1 : 1;
-					}
-
-					console.log(countsShort)
-					console.log(countsMedium)
-					console.log(countsLong)
-
-					for (let i = 0; i < uniqueGenresShortTerm.length; i++) {
-						genreShortCounter[i] = countsShort[uniqueGenresShortTerm[i]]
-					}
-					for (let i = 0; i < uniqueGenresMediumTerm.length; i++) {
-						genreMediumCounter[i] = countsMedium[uniqueGenresMediumTerm[i]]
-					}
-					for (let i = 0; i < uniqueGenresLongTerm.length; i++) {
-						genreLongCounter[i] = countsLong[uniqueGenresLongTerm[i]]
-					}
-
-					// Generate Pie Chart Short
-					document.getElementById('myChartShort').hidden = false;
-					document.getElementById('shortGraphText').hidden = false;
-					genreShortColors = []
-
-					for (let i = 0; i < genreShortCounter.length; i++) {
-						genreShortColors[i] = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
-					}
-
-					  new Chart("myChartShort", {
-						  type: "pie",
-						  data: {
-						    labels: uniqueGenresShortTerm,
-						    datasets: [{
-						      backgroundColor: genreShortColors,
-						      data: genreShortCounter
-						    }]
-						  },
-						  options: {
-						    title: {
-						      display: false,
-						      text: "Genres from Short Term Tracks"
-						    }
-						  }
-						});
-
-					// Generate Pie Chart Medium
-					document.getElementById('myChartMedium').hidden = false;
-					document.getElementById('mediumGraphText').hidden = false;
-					genreMediumColors = []
-
-					for (let i = 0; i < genreMediumCounter.length; i++) {
-						genreMediumColors[i] = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
-					}
-
-					  new Chart("myChartMedium", {
-						  type: "pie",
-						  data: {
-						    labels: uniqueGenresMediumTerm,
-						    datasets: [{
-						      backgroundColor: genreMediumColors,
-						      data: genreMediumCounter
-						    }]
-						  },
-						  options: {
-						    title: {
-						      display: false,
-						      text: "Genres from Short Term Tracks"
-						    }
-						  }
-						});
-						
-					// Generate Pie Chart Long
-					document.getElementById('myChartLong').hidden = false;
-					document.getElementById('longGraphText').hidden = false;
-					genreLongColors = []
-
-					for (let i = 0; i < genreLongCounter.length; i++) {
-						genreLongColors[i] = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
-					}
-
-					  new Chart("myChartLong", {
-						  type: "pie",
-						  data: {
-						    labels: uniqueGenresLongTerm,
-						    datasets: [{
-						      backgroundColor: genreLongColors,
-						      data: genreLongCounter
-						    }]
-						  },
-						  options: {
-						    title: {
-						      display: false,
-						      text: "Genres from Short Term Tracks"
-						    }
-						  }
-						});  
-
-				function startGenre() {
-					current_url = window.location.href;
-					access_token = current_url.split("#access_token=")[1].split("&")[0];
-					//document.write(access_token);
-					var spotifyApi = new SpotifyWebApi();
-					spotifyApi.setAccessToken(access_token)
-
-					// Get Short Term Tracks Genre
-					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'short_term'})
-					  .then(function(data) {
-					    var topTracksShortTermGenres = data.items;
-
-					    for (let i = 0; i < topTracksShortTermGenres.length; i++) {
-					    	spotifyApi.getArtist(data.items[i].artists[0].id)
-							  .then(function(data2) {
-							    for (let j = 0; j < data2.genres.length; j++) {
-							    	genresShortTerm.push(data2.genres[j])
-							    }
-							  }, function(err) {
-							    console.error(err);
-							  });
-					    }
-					  }, function(err) {
-					    console.log('Something went wrong!', err);
-					  });
-
-					  // Get Medium Term Tracks Genre
-					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'medium_term'})
-					  .then(function(data) {
-					    var topTracksMediumTermGenres = data.items;
-					    
-					    for (let i = 0; i < topTracksMediumTermGenres.length; i++) {
-					    	spotifyApi.getArtist(data.items[i].artists[0].id)
-							  .then(function(data2) {
-							    for (let j = 0; j < data2.genres.length; j++) {
-							    	genresMediumTerm.push(data2.genres[j])
-							    }
-							  }, function(err) {
-							    console.error(err);
-							  });
-					    }
-					  }, function(err) {
-					    console.log('Something went wrong!', err);
-					  });
-
-					  // Get Long Term Tracks Genre
-					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'long_term'})
-					  .then(function(data) {
-					    var topTracksLongTermGenres = data.items;
-					    
-					    for (let i = 0; i < topTracksLongTermGenres.length; i++) {
-					    	spotifyApi.getArtist(data.items[i].artists[0].id)
-							  .then(function(data2) {
-							    for (let j = 0; j < data2.genres.length; j++) {
-							    	genresLongTerm.push(data2.genres[j])
-							    }
-							  }, function(err) {
-							    console.error(err);
-							  });
-					    }
-					  }, function(err) {
-					    console.log('Something went wrong!', err);
-					  });
-						document.getElementById('testGraphButton').disabled = false;
-					}
 				}
 		</script>
 	</head>
