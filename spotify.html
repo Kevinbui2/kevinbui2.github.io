@@ -255,6 +255,12 @@
 					console.log(genresShortTerm)
 					console.log(genresMediumTerm)
 					console.log(genresLongTerm)
+					uniqueGenresShortTerm = new Set(genresShortTerm)
+					uniqueGenresMediumTerm = new Set(genresMediumTerm)
+					uniqueGenresLongTerm = new Set(genresLongTerm)
+					console.log(uniqueGenresShortTerm)
+					console.log(uniqueGenresMediumTerm)
+					console.log(uniqueGenresLongTerm)
 				}
 		</script>
 	</head>
@@ -285,7 +291,6 @@
 							<p></p>
 							<center>
 								<button id="testStatButton" onClick="testStat();genreGetter();">Generate Statistics</button>
-								<button id="testGraphButton" onClick="genreGetter()">Generate Graphs</button>
 							</center>
 							<p></p>
 							<center>
@@ -321,6 +326,10 @@
 							<img id="LongTermTrackPic" src="" width = "200" height = "200" style="float: right" hidden></img>
 							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs of All Time</h2>
 							<ol id='LongTermTrack'></ol>
+
+							<center>
+								<button id="testGraphButton" onClick="genreGetter()">Generate Graphs</button>
+							</center>
 
 							<!-- Eventual Chart 
 							<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
