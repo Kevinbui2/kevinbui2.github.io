@@ -254,22 +254,34 @@
 					console.log(countsMedium)
 					console.log(countsLong)
 
-					// TEST
+					// Filter Greater than 1 
 					const asArrayShort = Object.entries(countsShort);
 					const filteredShort = asArrayShort.filter(([key, value]) => value >= 2);
-					const shortGenreGreater2 = Object.fromEntries(filteredShort);
+					const shortGenreGreater1 = Object.fromEntries(filteredShort);
+					console.log(shortGenreGreater1)
 
-					console.log(shortGenreGreater2)
-					// END TEST
+					const asArrayMedium = Object.entries(countsMedium);
+					const filteredMedium = asArrayMedium.filter(([key, value]) => value >= 2);
+					const mediumGenreGreater1 = Object.fromEntries(filteredMedium);
+					console.log(mediumGenreGreater1)
 
-					for (let i = 0; i < uniqueGenresShortTerm.length; i++) {
-						genreShortCounter[i] = countsShort[uniqueGenresShortTerm[i]]
+					const asArrayLong = Object.entries(countsLong);
+					const filteredLong = asArrayLong.filter(([key, value]) => value >= 2);
+					const longGenreGreater1 = Object.fromEntries(filteredLong);
+					console.log(longGenreGreater1)
+
+					uniqueShortGenreFiltered = Object.keys(shortGenreGreater1)
+					uniqueMediumGenreFiltered = Object.keys(mediumGenreGreater1)
+					uniqueLongGenreFiltered = Object.keys(longGenreGreater1)
+
+					for (let i = 0; i < uniqueShortGenreFiltered.length; i++) {
+						genreShortCounter[i] = countsShort[uniqueShortGenreFiltered[i]]
 					}
-					for (let i = 0; i < uniqueGenresMediumTerm.length; i++) {
-						genreMediumCounter[i] = countsMedium[uniqueGenresMediumTerm[i]]
+					for (let i = 0; i < uniqueMediumGenreFiltered.length; i++) {
+						genreMediumCounter[i] = countsMedium[uniqueMediumGenreFiltered[i]]
 					}
-					for (let i = 0; i < uniqueGenresLongTerm.length; i++) {
-						genreLongCounter[i] = countsLong[uniqueGenresLongTerm[i]]
+					for (let i = 0; i < uniqueLongGenreFiltered.length; i++) {
+						genreLongCounter[i] = countsLong[uniqueLongGenreFiltered[i]]
 					}
 
 					// Generate Pie Chart Short
@@ -284,7 +296,7 @@
 					  new Chart("myChartShort", {
 						  type: "pie",
 						  data: {
-						    labels: uniqueGenresShortTerm,
+						    labels: uniqueShortGenreFiltered,
 						    datasets: [{
 						      backgroundColor: genreShortColors,
 						      data: genreShortCounter
@@ -310,7 +322,7 @@
 					  new Chart("myChartMedium", {
 						  type: "pie",
 						  data: {
-						    labels: uniqueGenresMediumTerm,
+						    labels: uniqueMediumGenreFiltered,
 						    datasets: [{
 						      backgroundColor: genreMediumColors,
 						      data: genreMediumCounter
@@ -336,7 +348,7 @@
 					  new Chart("myChartLong", {
 						  type: "pie",
 						  data: {
-						    labels: uniqueGenresLongTerm,
+						    labels: uniqueLongGenreFiltered,
 						    datasets: [{
 						      backgroundColor: genreLongColors,
 						      data: genreLongCounter
