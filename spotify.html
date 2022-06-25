@@ -268,7 +268,7 @@
 					console.log(genreMediumCounter)
 					console.log(genreLongCounter)
 
-					// Generate Bar Chart (WILL TRY AND DO AHHHH)
+					// Generate Pie Chart Short
 					document.getElementById('myChartShort').hidden = false;
 					genreShortColors = []
 
@@ -282,7 +282,6 @@
 						    labels: uniqueGenresShortTerm,
 						    datasets: [{
 						      backgroundColor: genreShortColors,
-						      //data: countsShort
 						      data: genreShortCounter
 						    }]
 						  },
@@ -293,6 +292,56 @@
 						    }
 						  }
 						});
+
+					// Generate Pie Chart Medium
+					document.getElementById('myChartMedium').hidden = false;
+					genreMediumColors = []
+
+					for (let i = 0; i < genreMediumCounter.length; i++) {
+						genreMediumColors[i] = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+					}
+
+					  new Chart("myChartMedium", {
+						  type: "pie",
+						  data: {
+						    labels: uniqueGenresMediumtTerm,
+						    datasets: [{
+						      backgroundColor: genreMediumColors,
+						      data: genreMediumCounter
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: false,
+						      text: "Genres from Short Term Tracks"
+						    }
+						  }
+						});
+						
+					// Generate Pie Chart Long
+					document.getElementById('myChartLong').hidden = false;
+					genreShortColors = []
+
+					for (let i = 0; i < genreLongCounter.length; i++) {
+						genreShortColors[i] = '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+					}
+
+					  new Chart("myChartLong", {
+						  type: "pie",
+						  data: {
+						    labels: uniqueGenresLongTerm,
+						    datasets: [{
+						      backgroundColor: genreLongColors,
+						      data: genreLongCounter
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: false,
+						      text: "Genres from Short Term Tracks"
+						    }
+						  }
+						});  
 
 				}
 		</script>
@@ -361,11 +410,24 @@
 							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs of All Time</h2>
 							<ol id='LongTermTrack'></ol>
 
+							<!-- Short Term Genre Graph -->
 							<center>
 								<h3>Genres from Top Tracks in the Last 4 Weeks</h3>
 							</center>
-
 							<canvas id="myChartShort" style="width:100%;max-width:700px" hidden></canvas>
+
+							<!-- Medium Term Genre Graph -->
+							<center>
+								<h3>Genres from Top Tracks in the Last 6 Months</h3>
+							</center>
+							<canvas id="myChartMedium" style="width:100%;max-width:700px" hidden></canvas>
+
+							<!-- Long Term Genre Graph -->
+							<center>
+								<h3>Genres from Top Tracks of All Time</h3>
+							</center>
+							<canvas id="myChartLong" style="width:100%;max-width:700px" hidden></canvas>
+
 						</div>
 					</section>
 
