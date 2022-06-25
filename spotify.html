@@ -223,26 +223,6 @@
 					  }, function(err) {
 					    console.log('Something went wrong!', err);
 					  });
-
-					  // Generate Bar Chart (WILL TRY AND DO AHHHH)
-					  /*
-					  new Chart("myChart", {
-						  type: "pie",
-						  data: {
-						    labels: xValues,
-						    datasets: [{
-						      //backgroundColor: barColors,
-						      data: yValues
-						    }]
-						  },
-						  options: {
-						    title: {
-						      display: true,
-						      text: "World Wide Wine Production"
-						    }
-						  }
-						});
-						*/
 						document.getElementById('testGraphButton').disabled = false;
 				}
 				function genreGetter() {
@@ -287,6 +267,24 @@
 					console.log(genreShortCounter)
 					console.log(genreMediumCounter)
 					console.log(genreLongCounter)
+
+					// Generate Bar Chart (WILL TRY AND DO AHHHH)
+					  new Chart("myChart", {
+						  type: "pie",
+						  data: {
+						    labels: uniqueGenresShortTerm,
+						    datasets: [{
+						      //backgroundColor: barColors,
+						      data: countsShort
+						    }]
+						  },
+						  options: {
+						    title: {
+						      display: true,
+						      text: "Genres from Short Term Tracks"
+						    }
+						  }
+						});
 
 				}
 		</script>
@@ -355,9 +353,7 @@
 							<h2 id='LongTermTrackTitle' hidden>Your Top 5 Songs of All Time</h2>
 							<ol id='LongTermTrack'></ol>
 
-							<!-- Eventual Chart 
 							<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-							-->
 						</div>
 					</section>
 
