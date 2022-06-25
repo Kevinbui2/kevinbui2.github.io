@@ -18,11 +18,6 @@
 		<script>
 				var genresShortTerm = []
 
-				function genreShortPush(object){
-					genresShortTerm.push(object)
-					console.log(object)
-				}
-
 				function testAuth() {
 					var client_id = '2324d4a0a83a4e26b618f73ba2d5cd0b';
 					var redirect_uri = 'https://kevinbui2.github.io/spotify';
@@ -178,8 +173,7 @@
 					    	spotifyApi.getArtist(data.items[i].artists[0].id)
 							  .then(function(data2) {
 							    for (let j = 0; j < data2.genres.length; j++) {
-							    	//genresShortTerm.push(data2.genres[j])
-							    	genreShortPush(data2.genres[j])
+							    	genresShortTerm.push(data2.genres[j])
 							    }
 							  }, function(err) {
 							    console.error(err);
@@ -191,6 +185,7 @@
 					  console.log('Short Term Tracks Genre')
 					  console.log(genresShortTerm)
 
+					  /*
 					  // Get Medium Term Tracks Genre
 					  const genresMediumTerm = []
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'medium_term'})
@@ -212,7 +207,9 @@
 					  });
 					  console.log('Medium Term Tracks Genre')
 					  console.log(genresMediumTerm)
+					  */
 
+					  /*
 					  // Get Long Term Tracks Genre
 					  const genresLongTerm = []
 					  spotifyApi.getMyTopTracks(options = {limit: 50, time_range: 'long_term'})
@@ -233,7 +230,8 @@
 					    console.log('Something went wrong!', err);
 					  });
 					  console.log('Long Term Tracks Genre')
-					  console.log(genresLongTerm)
+					  console.log(genresLongTerm
+					  */
 
 					  // Generate Bar Chart (WILL TRY AND DO AHHHH)
 					  /*
