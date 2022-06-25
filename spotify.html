@@ -254,30 +254,6 @@
 					console.log(countsMedium)
 					console.log(countsLong)
 
-					const _ = require("lodash");
-
-					const atLeast2Short = _.flow([
-					  Object.entries,
-					  arr => arr.filter(([key, value]) => value >= 2),
-					  Object.fromEntries
-					])(countsShort);
-
-					const atLeast2Medium = _.flow([
-					  Object.entries,
-					  arr => arr.filter(([key, value]) => value >= 2),
-					  Object.fromEntries
-					])(countsMedium);
-
-					const atLeast2Long = _.flow([
-					  Object.entries,
-					  arr => arr.filter(([key, value]) => value >= 2),
-					  Object.fromEntries
-					])(countsLong);
-
-					console.log(atLeast2Short)
-					console.log(atLeast2Medium)
-					console.log(atLeast2Long)
-
 					for (let i = 0; i < uniqueGenresShortTerm.length; i++) {
 						genreShortCounter[i] = countsShort[uniqueGenresShortTerm[i]]
 					}
@@ -487,8 +463,6 @@
 			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 			<script src='spotify-web-api.js'></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-			<script src="require.js"></script>
-			<script src="lodash.js"></script>
 
 	</body>
 </html>
