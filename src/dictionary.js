@@ -38,5 +38,21 @@ export const realDictionary = [
   "Vimba",
   "Wahoo",
   "Whiff",
-  "Ziege"
+  "Ziege",
+  "Otter",
+  "Whale",
+  "Conch",
+  "Krill",
+  "Snail",
+  "Coral",
+  "Squid",
+  "Prawn",
+  "Nudib",
+  "Smolt",
+  "Sprat",
+  "Brill",
+  "Brama",
+  "Banjo",
+  "Oscar",
+  "Zebra"
     ];
