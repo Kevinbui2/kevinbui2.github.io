@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBCSD Peepers</title>
+</head>
+<body>
+    <h1>Number of Days Old</h1>
+    <div id="result"></div>
+
+    <script>
+        // CSV data (embedded for demonstration purposes)
+        var csvData = `
+        Sean Choi,2001-08-03
+        Matthew Kong,2001-11-29
+        Pauline Hsu,2001-12-16
+        Matthew Lee,2001-12-23
+        Brian Wu,2002-01-03
+        Stacie Wu,2002-01-04
+        Lauren Wong,2002-01-17
+        Philemon Putra,2002-01-26
+        Larry Lee,2002-03-13
+        Kevin Bui,2002-03-22
+        Dorothy Nguyen,2002-03-26
+        Elisha Tom,2002-04-02
+        Yerin Kim,2002-04-08
+        Maggie Liu,2002-05-05
+        Abigail Law,2002-05-08
+        Angela Liu,2002-05-25
+        Harriet Mak,2002-05-27
+        Larry Song,2002-06-10
+        Katie Short,2002-06-11
+        Timothy Wu,2002-07-05
+        Alyson Yi,2002-07-24
+        Victor Yu,2002-07-26
+        Enoch Shiah,2002-07-27
+        Sean Cha,2002-07-31
+        Joyce Hu,2002-08-08
+        Lindsey Kim,2002-08-20
+        Ester Tsai,2002-08-22
+        Nathan Chuang,2002-08-30
+        Joshua Chuang,2002-08-30
+        George Luo,2002-09-08
+        Jonathan Cheung,2002-09-18
+        Michael Fong,2002-09-19
+        Jessica Yu,2002-10-30
+        Serena Spada,2002-11-02
+        `;
+
+        // Parse CSV data
+        var lines = csvData.trim().split('\n');
+        var data = lines.map(line => {
+            var [name, birthday] = line.split(',');
+            return { name, birthday };
+        });
+
+        calculateAges(data);
+
+        function calculateAges(data) {
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = ""; // Clear previous content
+
+            data.forEach(person => {
+                var dob = new Date(person.birthday);
+                var today = new Date();
+                var ageInMilliseconds = today - dob;
+                var ageInDays = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24));
+
+                var resultPara = document.createElement("p");
+                resultPara.textContent = person.name + " has been alive for " + ageInDays + " days.";
+                resultDiv.appendChild(resultPara);
+            });
+        }
+
+    </script>
+</body>
+</html>
