@@ -1,18 +1,23 @@
 [
-    {
-        "prompt1": "Be able to fly anywhere you want?",
-        "prompt2": "Be invisible whenever you want?"
-    },
-    {
-        "prompt1": "Live in the mountains with no technology?",
-        "prompt2": "Live in a city with no nature?"
-    },
-    {
-        "prompt1": "Eat only pizza for the rest of your life?",
-        "prompt2": "Eat only burgers for the rest of your life?"
-    },
-    {
-        "prompt1": "Have the ability to time travel?",
-        "prompt2": "Have the ability to read minds?"
-    }
+    { "prompt1": "Have the ability to fly?", "prompt2": "Have the ability to breathe underwater?" },
+    { "prompt1": "Live in a treehouse?", "prompt2": "Live on a boat?" },
+    { "prompt1": "Have unlimited pizza forever?", "prompt2": "Have unlimited ice cream forever?" },
+    { "prompt1": "Be always 10 minutes early?", "prompt2": "Be always 10 minutes late?" },
+    { "prompt1": "Be a famous movie star?", "prompt2": "Be a famous musician?" },
+    { "prompt1": "Only eat salty foods forever?", "prompt2": "Only eat sweet foods forever?" },
+    { "prompt1": "Have a pet dinosaur?", "prompt2": "Have a pet dragon?" },
+    { "prompt1": "Always have to sing instead of speaking?", "prompt2": "Always have to dance instead of walking?" },
+    { "prompt1": "Live in a world with no TV?", "prompt2": "Live in a world with no internet?" },
+    { "prompt1": "Be able to control the weather?", "prompt2": "Be able to control time?" },
+    { "prompt1": "Have a rewind button for life?", "prompt2": "Have a pause button for life?" },
+    { "prompt1": "Lose all your money?", "prompt2": "Lose all the photos you've ever taken?" },
+    { "prompt1": "Know how you will die?", "prompt2": "Know when you will die?" },
+    { "prompt1": "Live 100 years in the past?", "prompt2": "Live 100 years in the future?" },
+    { "prompt1": "Always know the truth?", "prompt2": "Always get what you want but never know why?" },
+    { "prompt1": "Fight 100 duck-sized horses?", "prompt2": "Fight 1 horse-sized duck?" },
+    { "prompt1": "Have spaghetti for hair?", "prompt2": "Have marshmallows for hands?" },
+    { "prompt1": "Only be able to whisper?", "prompt2": "Only be able to shout?" },
+    { "prompt1": "Live in Hogwarts?", "prompt2": "Live in Middle Earth?" },
+    { "prompt1": "Be a superhero?", "prompt2": "Be a wizard?" },
+    { "prompt1": "Travel through space?", "prompt2": "Travel through time?" }
 ]

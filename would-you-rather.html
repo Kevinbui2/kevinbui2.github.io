@@ -30,6 +30,12 @@
             border-radius: 8px;
         }
 
+        .or-text {
+            font-size: 2em;
+            color: #777;
+            margin: 10px 0;
+        }
+
         button {
             padding: 10px 20px;
             font-size: 1.2em;
@@ -38,7 +44,8 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
+            margin: 40px auto 20px; /* Push button to the bottom */
+            display: block;
         }
 
         button:hover {
@@ -49,8 +56,10 @@
 <body>
     <h1>Would You Rather...</h1>
     <div id="prompt1" class="prompt">Loading...</div>
-    <button id="nextSet">Next</button>
+    <div class="or-text">OR</div> <!-- "OR" text between the prompts -->
     <div id="prompt2" class="prompt">Loading...</div>
+    
+    <button id="nextSet">Next</button> <!-- Button moved to the bottom -->
 
     <script src="script.js"></script>
 </body>

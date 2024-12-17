@@ -1,12 +1,11 @@
 let prompts = []; // Array to store prompts
-let currentIndex = 0; // Track which set is being displayed
 
-// Fetch prompts from JSON file on page load
+// Fetch prompts from JSON file
 fetch('prompts.json')
     .then(response => response.json())
     .then(data => {
         prompts = data;
-        displayPrompts(); // Display the first set
+        showRandomPrompt(); // Show the first random prompt
     })
     .catch(error => {
         console.error('Error loading prompts:', error);
@@ -14,24 +13,17 @@ fetch('prompts.json')
         document.getElementById('prompt2').innerText = "Error loading prompts.";
     });
 
-// Function to display current set of prompts
-function displayPrompts() {
+// Function to display random prompts
+function showRandomPrompt() {
     if (prompts.length > 0) {
-        const prompt1 = document.getElementById('prompt1');
-        const prompt2 = document.getElementById('prompt2');
-
-        prompt1.innerText = prompts[currentIndex].prompt1;
-        prompt2.innerText = prompts[currentIndex].prompt2;
+        const randomIndex = Math.floor(Math.random() * prompts.length);
+        document.getElementById('prompt1').innerText = prompts[randomIndex].prompt1;
+        document.getElementById('prompt2').innerText = prompts[randomIndex].prompt2;
+    } else {
+        document.getElementById('prompt1').innerText = "No prompts available.";
+        document.getElementById('prompt2').innerText = "No prompts available.";
     }
 }
 
-// Add event listener for "Next Set" button
-document.getElementById('nextSet').addEventListener('click', () => {
-    currentIndex++; // Move to the next set
-
-    if (currentIndex >= prompts.length) {
-        currentIndex = 0; // Loop back to the beginning
-    }
-
-    displayPrompts(); // Update the display
-});
+// Add event listener for "Next" button
+document.getElementById('nextSet').addEventListener('click', showRandomPrompt);
