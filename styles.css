@@ -48,9 +48,7 @@ button:hover {
 #intro {
     margin: 0;
     padding: 0;
-    height: 100vh;
     display: block;
-    background-color: #ffffff;
 }
 
 #intro h1 {
