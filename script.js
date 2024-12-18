@@ -43,9 +43,36 @@ function showRandomPrompt() {
 // Event listener for "Next" button
 document.getElementById('nextSet').addEventListener('click', showRandomPrompt);
 
+let punishments = []; // Array to store punishment messages
+
+// Fetch punishment prompts from JSON file
+fetch('punishments.json')
+    .then(response => response.json())
+    .then(data => {
+        punishments = data; // Store the prompts in the punishments array
+    })
+    .catch(error => {
+        console.error('Error loading punishments:', error);
+    });
+
 // Event listener for "Start" button
 document.getElementById('startGame').addEventListener('click', () => {
     document.getElementById('intro').style.display = 'none'; // Hide the intro screen
+    document.getElementById('transition').style.display = 'block'; // Show the transitional screen
+
+    // Pick a random punishment from the array
+    if (punishments.length > 0) {
+        const randomIndex = Math.floor(Math.random() * punishments.length);
+        document.getElementById('punishment').innerText = punishments[randomIndex];
+    } else {
+        document.getElementById('punishment').innerText = "Be nice to her anyway! 😊"; // Fallback if JSON fails to load
+    }
+});
+
+// Event listener for "Continue" button
+document.getElementById('continueToGame').addEventListener('click', () => {
+    document.getElementById('transition').style.display = 'none'; // Hide the transitional screen
     document.getElementById('game').style.display = 'block'; // Show the game screen
     showRandomPrompt(); // Display the first random prompt
 });
+
