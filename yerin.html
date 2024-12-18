@@ -13,21 +13,22 @@
         <button id="startGame">Start</button>
     </div>
 
-    <!-- Transitional Screen -->
-    <div id="transition" style="display: none;">
+    <!-- Transition Screen -->
+    <div id="transition" style="display:none;">
         <h2>If you get more than 2 wrong...</h2>
-        <p id="punishment">Loading...</p>
+        <p id="punishment">Loading punishment...</p> <!-- Punishment will be shown here -->
         <button id="continueToGame">Continue</button>
     </div>
 
-
     <!-- Game Screen -->
-    <div id="game" style="display: none;">
+    <div id="game">
         <div id="prompt1" class="prompt">Loading...</div>
         <div class="or-text">OR</div>
         <div id="prompt2" class="prompt">Loading...</div>
+        <div id="clickCount">You have clicked 0 times.</div> <!-- This is the counter -->
         <button id="nextSet">Next</button>
     </div>
+    
 
     <script src="script.js"></script>
 </body>

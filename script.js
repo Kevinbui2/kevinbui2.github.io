@@ -1,7 +1,9 @@
 let prompts = [];           // Array to store prompts
 let remainingPrompts = [];  // Array to keep track of remaining prompts
+let punishments = [];       // Array to store punishments
+let clickCounter = 0;       // Variable to track how many times the button has been clicked
 
-// Fetch prompts from JSON file
+// Fetch prompts and punishments from JSON files
 fetch('prompts.json')
     .then(response => response.json())
     .then(data => {
@@ -13,6 +15,15 @@ fetch('prompts.json')
         console.error('Error loading prompts:', error);
         document.getElementById('prompt1').innerText = "Error loading prompts.";
         document.getElementById('prompt2').innerText = "Error loading prompts.";
+    });
+
+fetch('punishments.json')
+    .then(response => response.json())
+    .then(data => {
+        punishments = data; // Store punishments when the JSON is loaded
+    })
+    .catch(error => {
+        console.error('Error loading punishments:', error);
     });
 
 // Function to reset the pool of remaining prompts
@@ -38,41 +49,36 @@ function showRandomPrompt() {
 
     // Remove the selected prompt from the remaining pool
     remainingPrompts.splice(randomIndex, 1);
+
+    // Increment and display the click counter
+    clickCounter++;
+    document.getElementById('clickCount').innerText = `${clickCounter}`;
 }
 
 // Event listener for "Next" button
-document.getElementById('nextSet').addEventListener('click', showRandomPrompt);
-
-let punishments = []; // Array to store punishment messages
-
-// Fetch punishment prompts from JSON file
-fetch('punishments.json')
-    .then(response => response.json())
-    .then(data => {
-        punishments = data; // Store the prompts in the punishments array
-    })
-    .catch(error => {
-        console.error('Error loading punishments:', error);
-    });
+document.getElementById('nextSet').addEventListener('click', () => {
+    showRandomPrompt(); // Only show a new prompt when the "Next" button is clicked
+});
 
 // Event listener for "Start" button
 document.getElementById('startGame').addEventListener('click', () => {
     document.getElementById('intro').style.display = 'none'; // Hide the intro screen
-    document.getElementById('transition').style.display = 'block'; // Show the transitional screen
-
-    // Pick a random punishment from the array
+    document.getElementById('transition').style.display = 'block'; // Show the transition screen
+    clickCounter = 0; // Reset the click counter when the game starts
+    document.getElementById('clickCount').innerText = `${clickCounter}`; // Reset the click count display
+    
+    // Select a random punishment when the game starts
     if (punishments.length > 0) {
-        const randomIndex = Math.floor(Math.random() * punishments.length);
-        document.getElementById('punishment').innerText = punishments[randomIndex];
+        const randomPunishment = punishments[Math.floor(Math.random() * punishments.length)];
+        document.getElementById('punishment').innerText = `${randomPunishment}`;
     } else {
-        document.getElementById('punishment').innerText = "Be nice to her anyway! 😊"; // Fallback if JSON fails to load
+        document.getElementById('punishment').innerText = "No punishments available!";
     }
 });
 
-// Event listener for "Continue" button
+// Event listener for "Continue" button (transition screen)
 document.getElementById('continueToGame').addEventListener('click', () => {
-    document.getElementById('transition').style.display = 'none'; // Hide the transitional screen
+    document.getElementById('transition').style.display = 'none'; // Hide the transition screen
     document.getElementById('game').style.display = 'block'; // Show the game screen
     showRandomPrompt(); // Display the first random prompt
 });
-
