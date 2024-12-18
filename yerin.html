@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+        
     <!-- Intro Screen -->
     <div id="intro">
         <h1>How Well Do You Know Your Girlfriend? <br> <span class="impossible-edition">[Impossible Edition]</span></h1>
@@ -21,14 +22,19 @@
     </div>
 
     <!-- Game Screen -->
-    <div id="game">
+    <div id="game" style="display:none;">
         <div id="prompt1" class="prompt">Loading...</div>
         <div class="or-text">OR</div>
         <div id="prompt2" class="prompt">Loading...</div>
-        <div id="clickCount">You have clicked 0 times.</div> <!-- This is the counter -->
-        <button id="nextSet">Next</button>
+        
+        <!-- Counter Display -->
+        <div id="correctCount">Correct answers: 0</div>
+        <div id="incorrectCount">Incorrect answers: 0</div>
+        
+        <!-- Correct and Incorrect Buttons -->
+        <button id="correctBtn" class="correctBtn">Correct</button>
+        <button id="incorrectBtn" class="incorrectBtn">Incorrect</button>
     </div>
-    
 
     <script src="script.js"></script>
 </body>

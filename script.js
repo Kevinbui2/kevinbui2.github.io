@@ -1,7 +1,8 @@
 let prompts = [];           // Array to store prompts
 let remainingPrompts = [];  // Array to keep track of remaining prompts
-let punishments = [];       // Array to store punishments
-let clickCounter = 0;       // Variable to track how many times the button has been clicked
+let punishments = [];       // Array to store punishments     // Variable to track how many times the button has been clicked
+let correctCounter = 0;     // Counter for correct answers
+let incorrectCounter = 0;   // Counter for incorrect answers
 
 // Fetch prompts and punishments from JSON files
 fetch('prompts.json')
@@ -49,23 +50,30 @@ function showRandomPrompt() {
 
     // Remove the selected prompt from the remaining pool
     remainingPrompts.splice(randomIndex, 1);
-
-    // Increment and display the click counter
-    clickCounter++;
-    document.getElementById('clickCount').innerText = `${clickCounter}`;
 }
 
-// Event listener for "Next" button
-document.getElementById('nextSet').addEventListener('click', () => {
-    showRandomPrompt(); // Only show a new prompt when the "Next" button is clicked
+// Event listener for "Correct" button
+document.getElementById('correctBtn').addEventListener('click', () => {
+    correctCounter++;  // Increment the correct counter
+    document.getElementById('correctCount').innerText = `Correct answers: ${correctCounter}`;
+    showRandomPrompt(); // Show a new prompt after clicking "Correct"
+});
+
+// Event listener for "Incorrect" button
+document.getElementById('incorrectBtn').addEventListener('click', () => {
+    incorrectCounter++;  // Increment the incorrect counter
+    document.getElementById('incorrectCount').innerText = `Incorrect answers: ${incorrectCounter}`;
+    showRandomPrompt(); // Show a new prompt after clicking "Incorrect"
 });
 
 // Event listener for "Start" button
 document.getElementById('startGame').addEventListener('click', () => {
     document.getElementById('intro').style.display = 'none'; // Hide the intro screen
     document.getElementById('transition').style.display = 'block'; // Show the transition screen
-    clickCounter = 0; // Reset the click counter when the game starts
-    document.getElementById('clickCount').innerText = `${clickCounter}`; // Reset the click count display
+    correctCounter = 0; // Reset the correct counter
+    incorrectCounter = 0; // Reset the incorrect counter
+    document.getElementById('correctCount').innerText = `Correct answers: ${correctCounter}`;
+    document.getElementById('incorrectCount').innerText = `Incorrect answers: ${incorrectCounter}`;
     
     // Select a random punishment when the game starts
     if (punishments.length > 0) {

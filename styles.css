@@ -66,3 +66,33 @@ button:hover {
 #game {
     display: none; /* Game is hidden initially */
 }
+
+/* Style for Correct Button */
+.correctBtn {
+    background-color: green; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.correctBtn:hover {
+    background-color: darkgreen; /* Darker green on hover */
+}
+
+/* Style for Incorrect Button */
+.incorrectBtn {
+    background-color: red; /* Red background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.incorrectBtn:hover {
+    background-color: darkred; /* Darker red on hover */
+}
