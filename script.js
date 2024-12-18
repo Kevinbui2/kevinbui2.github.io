@@ -1,11 +1,13 @@
-let prompts = []; // Array to store prompts
+let prompts = [];           // Array to store prompts
+let remainingPrompts = [];  // Array to keep track of remaining prompts
 
 // Fetch prompts from JSON file
 fetch('prompts.json')
     .then(response => response.json())
     .then(data => {
         prompts = data;
-        showRandomPrompt(); // Show the first random prompt
+        resetPrompts(); // Initialize remaining prompts
+        showRandomPrompt(); // Display the first random prompt
     })
     .catch(error => {
         console.error('Error loading prompts:', error);
@@ -13,17 +15,37 @@ fetch('prompts.json')
         document.getElementById('prompt2').innerText = "Error loading prompts.";
     });
 
-// Function to display random prompts
-function showRandomPrompt() {
-    if (prompts.length > 0) {
-        const randomIndex = Math.floor(Math.random() * prompts.length);
-        document.getElementById('prompt1').innerText = prompts[randomIndex].prompt1;
-        document.getElementById('prompt2').innerText = prompts[randomIndex].prompt2;
-    } else {
-        document.getElementById('prompt1').innerText = "No prompts available.";
-        document.getElementById('prompt2').innerText = "No prompts available.";
-    }
+// Function to reset the pool of remaining prompts
+function resetPrompts() {
+    remainingPrompts = [...prompts]; // Clone all prompts into the remaining pool
 }
 
-// Add event listener for "Next" button
+// Function to display a random prompt
+function showRandomPrompt() {
+    if (remainingPrompts.length === 0) {
+        // If no prompts are left, reset the pool and inform the user
+        alert("You've seen all the prompts! Restarting...");
+        resetPrompts();
+    }
+
+    // Pick a random index from the remaining prompts
+    const randomIndex = Math.floor(Math.random() * remainingPrompts.length);
+
+    // Display the randomly selected prompt
+    const selectedPrompt = remainingPrompts[randomIndex];
+    document.getElementById('prompt1').innerText = selectedPrompt.prompt1;
+    document.getElementById('prompt2').innerText = selectedPrompt.prompt2;
+
+    // Remove the selected prompt from the remaining pool
+    remainingPrompts.splice(randomIndex, 1);
+}
+
+// Event listener for "Next" button
 document.getElementById('nextSet').addEventListener('click', showRandomPrompt);
+
+// Event listener for "Start" button
+document.getElementById('startGame').addEventListener('click', () => {
+    document.getElementById('intro').style.display = 'none'; // Hide the intro screen
+    document.getElementById('game').style.display = 'block'; // Show the game screen
+    showRandomPrompt(); // Display the first random prompt
+});

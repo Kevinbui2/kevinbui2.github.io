@@ -44,22 +44,54 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin: 40px auto 20px; /* Push button to the bottom */
-            display: block;
+            margin-top: 20px;
         }
 
         button:hover {
             background-color: #0056b3;
         }
+
+        /* Intro Screen Styling */
+        #intro {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+
+        #intro h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #intro .impossible-edition {
+            color: red; /* Red color for Impossible Edition */
+        }
+
+        #game {
+            display: none; /* Game is hidden initially */
+        }
     </style>
 </head>
 <body>
-    <h1>Would You Rather...</h1>
-    <div id="prompt1" class="prompt">Loading...</div>
-    <div class="or-text">OR</div> <!-- "OR" text between the prompts -->
-    <div id="prompt2" class="prompt">Loading...</div>
-    
-    <button id="nextSet">Next</button> <!-- Button moved to the bottom -->
+    <!-- Intro Screen -->
+    <div id="intro">
+        <h1>How Well Do You Know Your Girlfriend? <br> <span class="impossible-edition">[Impossible Edition]</span></h1>
+        <button id="startGame">Start</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game">
+        <div id="prompt1" class="prompt">Loading...</div>
+        <div class="or-text">OR</div>
+        <div id="prompt2" class="prompt">Loading...</div>
+        <button id="nextSet">Next</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
